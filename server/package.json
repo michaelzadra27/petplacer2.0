@@ -1,26 +1,26 @@
 {
-    "name": "mern-server",
-    "version": "1.0.0",
-    "description": "",
-    "main": "server.js",
-    "scripts": {
-        "start": "node server.js",
-        "watch": "nodemon",
-        "seed": "node seeders/seed.js"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "apollo-boost": "^0.4.9",
-        "apollo-server-express": "^3.3.0",
-        "bcrypt": "^5.0.1",
-        "graphql": "^15.5.2",
-        "jsonwebtoken": "^8.5.1",
-        "mongoose": "^6.0.3",
-        "path": "^0.12.7"
-    },
-    "devDependencies": {
-        "nodemon": "^2.0.3"
-    }
+  "name": "mern-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "watch": "nodemon",
+    "seed": "node seeders/seed.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-boost": "^0.4.9",
+    "apollo-server-express": "^3.3.0",
+    "bcrypt": "^5.0.1",
+    "graphql": "^15.5.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.3",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
 }
