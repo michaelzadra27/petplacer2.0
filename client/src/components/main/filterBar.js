@@ -1,6 +1,6 @@
 import React from 'react';
 import { DropdownButton, ButtonGroup, Dropdown } from 'react-bootstrap';
-const FilterNav = () => {
+const FilterBar = () => {
     return (
 <>
   {['Breed', 'Gender', 'Location'].map(
@@ -22,4 +22,4 @@ const FilterNav = () => {
 </>
     );
 }
-export default FilterNav;
+export default FilterBar;
