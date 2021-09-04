@@ -14,11 +14,7 @@ import FilterNav from './components/main/filterBar';
 function App() {
   return (
     <div className="App">
-
-      <MyLikes />
-
-      <FilterNav/>
-
+      <Navbar2 />
     </div>
   );
 }
