@@ -1,15 +1,22 @@
+import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
-import Home from './pages/Home';
-import Matchup from './pages/Matchup';
-import Vote from './pages/Vote';
-import NotFound from './pages/NotFound';
+import Login from './components/login';
+import Signup from './components/signup';
+import Navbar from './components/main/navbar';
+import Footer from './components/main/footer';
+import Navbar2 from './components/main/navbar2';
+import Home from './components/main/home';
+import MyLikes from './components/main/mylikes';
+
+
 
 const client = new ApolloClient({
   uri: '/graphql',
   cache: new InMemoryCache(),
 })
+
 function App() {
   return (
     <ApolloProvider client={client}>
@@ -32,7 +39,6 @@ function App() {
         </div>
       </Router>
     </ApolloProvider>
-  );
 }
 
 export default App;
