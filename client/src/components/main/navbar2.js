@@ -1,73 +1,59 @@
 import React from "react";
 import "./navbar2.css";
+import { DropdownButton, ButtonGroup, Dropdown } from 'react-bootstrap';
 
-const Navbar2 = () => {
 
-    //const [optionValue, setOptionValue] = useState("");
-    
+const Navbar2 = () => {    
     const handleSelect = (e) => {
       console.log(e.target.value);
-      //setOptionValue(e.target.value);
     };
 
 
     return ( 
         <div className="navbar2">
-<<<<<<< HEAD
-            <div class="dropdown">
-    <button class="dropbtn">Breed
-    </button>
-    <div class="dropdown-content">
-      <a href="#">Breed 1</a>
-      <a href="#">Breed 2</a>
-      <a href="#">Breed 3</a>
-    </div>
-  </div>
-  <div class="dropdown">
-    <button class="dropbtn">Sex
-    </button>
-    <div class="dropdown-content">
-      <a href="#">Male</a>
-      <a href="#">Female</a>
-      <a href="#">No Preference</a>
-    </div>
-  </div>
-  <div class="dropdown">
-    <button class="dropbtn">Location
-    </button>
-    <div class="dropdown-content">
-      <a href="#">California</a>
-      <a href="#">Florida</a>
-      <a href="#">Massachusetts</a>
-    </div>
-  </div>
-=======
-            <div className="dropdown" onchange={handleSelect}>
-                <button className="dropbtn">Breed</button>
-                <select className="dropdown-content" onchange={handleSelect}>
-                <option value = 'oh No'>Oh No</option>
-                <option value ="2"> two </option>
-                <p>This Part Will Be...</p>
-                <p>...Complicated</p>
-                </select>
-            </div>
-            <div className="dropdown">
-                <button className="dropbtn">Sex</button>
-                <div className="dropdown-content">
-                <p>Male</p>
-                <p>Female</p>
-                <p>Undecided</p>
-                </div>
-            </div>
-            <div className="dropdown">
-                <button className="dropbtn">Location</button>
-                <div className="dropdown-content">
-                <p>Sacramento</p>
-                <p>Los Angeles</p>
-                <p>San Diego</p>
-                </div>
-            </div>
->>>>>>> master
+            <>
+                  <DropdownButton
+                    className="dropBtn"
+                    as={ButtonGroup}
+                    key={"Breed"}
+                    // id={`dropdown-variants-${variant}`}
+                    title={"Breed"}
+                    onSelect={handleSelect}
+                  >
+                    <Dropdown.Item eventKey="Breed1">Breed 1</Dropdown.Item>
+                    <Dropdown.Item eventKey="Breed2">Breed 2</Dropdown.Item>
+                    <Dropdown.Item eventKey="Breed3">Breed 3</Dropdown.Item>
+                    <Dropdown.Item eventKey="Breed4">Breed 4</Dropdown.Item>
+                  </DropdownButton>
+
+                  <DropdownButton
+                    className="dropBtn"
+                    as={ButtonGroup}
+                    key={"Sex"}
+                    // id={`dropdown-variants-${variant}`}
+                    title={"Sex"}
+                    onSelect={handleSelect}
+                  >
+                    <Dropdown.Item eventKey="Sex1">Male</Dropdown.Item>
+                    <Dropdown.Item eventKey="Sex2">Female</Dropdown.Item>
+                    <Dropdown.Item eventKey="Sex3">No Preference</Dropdown.Item>
+                  </DropdownButton>
+                  
+                  <DropdownButton
+                    className="dropBtn"
+                    as={ButtonGroup}
+                    key={"Location"}
+                    // id={`dropdown-variants-${variant}`}
+                    title={"Location"}
+                    onSelect={handleSelect}
+                  >
+                    <Dropdown.Item eventKey="Location1">State 1</Dropdown.Item>
+                    <Dropdown.Item eventKey="Location2">State 2</Dropdown.Item>
+                    <Dropdown.Item eventKey="Location3">State 3</Dropdown.Item>
+                    <Dropdown.Item eventKey="Location4">State 4</Dropdown.Item>
+                  </DropdownButton>
+                  </>
+   
             <div className="linkAccounts">
                 <p>Link Accounts</p>
             </div>
