@@ -8,7 +8,6 @@ import Navbar2 from './components/main/navbar2';
 import Home from './components/main/home';
 import MyLikes from './components/main/mylikes';
 
-import FilterNav from './components/main/filterBar';
 
 
 function App() {

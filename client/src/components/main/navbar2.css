@@ -50,7 +50,7 @@ p{
 
 .dropdown {
     float: left;
-    overflow: hidden;
+    /* overflow: hidden; */
   }
   
   /* Dropdown button */
