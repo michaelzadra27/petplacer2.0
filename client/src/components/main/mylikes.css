@@ -1,0 +1,31 @@
+
+.myLikes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    padding: 30px;
+    margin: 30px;
+    height: 400px;
+    width: 500px;
+    border-radius: 45px;
+    box-shadow: 5px 10px 10px grey;
+}
+
+.selections {
+    display: flex;
+    justify-content: space-evenly;
+}
+.back-button {
+    width: 200px;
+    height: 70px;
+    font-size: 32px;
+    margin-top: 20px;
+    margin-right: 40px;
+    border-radius: 45px;
+    background: linear-gradient(45deg, #FF6A5B, #FD2B7A);
+    box-shadow: 5px 10px 10px grey;
+}

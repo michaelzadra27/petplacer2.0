@@ -1,0 +1,36 @@
+.navbar{
+    display: flex;
+    flex-direction: row;
+    font-size: x-large;
+    height: 50px;
+    background-color: rgb(0, 0, 0);
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    color: white;
+}
+
+h3{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+}
+
+p{
+    display: flex;
+    margin-right: 20px;
+    font-weight: bolder;
+}
+
+/* p1{
+    display: flex;
+    margin-right: 40px;
+    font-size: smaller;
+} */
