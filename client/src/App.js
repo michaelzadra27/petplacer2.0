@@ -9,7 +9,6 @@ import Footer from './components/main/footer';
 import Navbar2 from './components/main/navbar2';
 import Home from './components/main/home';
 import MyLikes from './components/main/mylikes';
-import FilterBar from './components/main/filterBar';
 
 
 
@@ -23,7 +22,7 @@ function App() {
     // <ApolloProvider client={client}>
       
       <Router>
-        <FilterBar/>
+        
         <div className="flex-column justify-center align-center min-100-vh bg-primary">
           <Switch>
             <Route exact path="/">
