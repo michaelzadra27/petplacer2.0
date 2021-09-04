@@ -1,0 +1,65 @@
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card{
+    padding: 30px;
+    margin: 30px;
+    height: 400px;
+    width: 400px;
+    border-radius: 45px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 10px 10px grey;
+}
+h2{
+    padding: 20px;
+}
+
+label{
+    display: flex;
+    font-weight: bold;
+    justify-content: flex-start;
+    margin: 5px;
+}
+
+input {
+    padding: 5px;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    box-shadow: 5px 10px 10px grey;
+}
+.login-button {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 50%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-radius: 45px;
+    background: linear-gradient(45deg, #FF6A5B, #FD2B7A);
+    box-shadow: 5px 10px 10px grey;
+}
+
+.signup-button {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    border-radius: 45px;
+    background: linear-gradient(45deg, #FF6A5B, #FD2B7A);
+    box-shadow: 5px 10px 10px grey;
+}

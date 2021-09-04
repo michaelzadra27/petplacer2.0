@@ -1,0 +1,101 @@
+.navbar2{
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: large;
+    height: 50px;
+    width: 95%;
+    background-color: rgb(0, 0, 0);
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    margin-top: 20px;
+    color: white;
+}
+
+h3{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.linkAccounts {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+}
+
+p{
+    display: flex;
+    margin-right: 20px;
+    font-weight: bolder;
+}
+
+.search-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    padding: 10px;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    border-radius: 45px;
+    background: linear-gradient(45deg, #FF6A5B, #FD2B7A);
+    font-size: 24px;
+    color: white;
+}
+
+/* Dropdown menu stuff*/
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  /* Dropdown button */
+  .dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    
+  }
+  
+  /* Add a red background color to navbar links on hover */
+  .navbar p:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+  }
+  
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    color: black;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content p {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  /* Add a grey background color to dropdown links on hover */
+  .dropdown-content p:hover {
+    background-color: #ddd;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
