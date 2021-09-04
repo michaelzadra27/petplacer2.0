@@ -15,9 +15,9 @@ function App() {
   return (
     <div className="App">
 
-      <MyLikes />
+      <Navbar2 />
 
-      <FilterNav/>
+      
 
     </div>
   );
