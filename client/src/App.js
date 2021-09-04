@@ -14,11 +14,7 @@ import FilterNav from './components/main/filterBar';
 function App() {
   return (
     <div className="App">
-
       <Navbar2 />
-
-      
-
     </div>
   );
 }
