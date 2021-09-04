@@ -27,19 +27,19 @@ function App() {
               <Home />
             </Route>
             <Route exact path="/matchup">
-              <Matchup />
+              {/* <Matchup /> */}
             </Route>
             <Route exact path="/matchup/:id">
-              <Vote />
+              {/* <Vote /> */}
             </Route>
             <Route>
-              <NotFound />
+              {/* <NotFound /> */}
             </Route>
           </Switch>
         </div>
       </Router>
     </ApolloProvider>
-}
+  )};
 
 export default App;
 
