@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import FilterNav from './components/main/filterBar';
 
