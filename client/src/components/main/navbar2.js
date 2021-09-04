@@ -1,15 +1,26 @@
+import React from "react";
 import "./navbar2.css";
 
 const Navbar2 = () => {
+
+    //const [optionValue, setOptionValue] = useState("");
+    
+    const handleSelect = (e) => {
+      console.log(e.target.value);
+      //setOptionValue(e.target.value);
+    };
+
+
     return ( 
         <div className="navbar2">
-            <div className="dropdown">
+            <div className="dropdown" onchange={handleSelect}>
                 <button className="dropbtn">Breed</button>
-                <div className="dropdown-content">
-                <p>Oh No</p>
+                <select className="dropdown-content" onchange={handleSelect}>
+                <option value = 'oh No'>Oh No</option>
+                <option value ="2"> two </option>
                 <p>This Part Will Be...</p>
                 <p>...Complicated</p>
-                </div>
+                </select>
             </div>
             <div className="dropdown">
                 <button className="dropbtn">Sex</button>
