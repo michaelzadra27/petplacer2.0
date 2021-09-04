@@ -36,7 +36,7 @@ const Navbar2 = () => {
                   >
                     <Dropdown.Item eventKey="Sex1">Male</Dropdown.Item>
                     <Dropdown.Item eventKey="Sex2">Female</Dropdown.Item>
-                    <Dropdown.Item eventKey="Sex3">No Preference</Dropdown.Item>
+                    <Dropdown.Item eventKey="Sex3">Any</Dropdown.Item>
                   </DropdownButton>
                   
                   <DropdownButton
