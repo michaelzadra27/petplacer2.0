@@ -1,12 +1,12 @@
 
-.myLikes {
+.myMatches {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.likeCard{
+.matchCard{
     padding: 30px;
     margin-top: 30px;
     height: 50vh;
@@ -22,11 +22,11 @@ h4 {
     margin-bottom: 1em;
 }
 
-.likedPets{
+.matchedPets{
     display: flex;
 }
 
-.smallLikeCard{
+.smallMatchCard{
     height: 50px;
     width: 50px;
     background-color: lightcoral;
@@ -35,7 +35,7 @@ h4 {
     box-shadow: 5px 10px 10px grey;
 }
 
-.likedInfo{
+.matchedInfo{
     display: flex;
     align-items: center;
     margin-left: 1em;
@@ -43,10 +43,9 @@ h4 {
 
 .selections {
     display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+    justify-content: space-evenly;
 }
-.back-button.like {
+.back-button.match {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,6 +53,7 @@ h4 {
     height: 70px;
     font-size: 32px;
     margin-top: 20px;
+    margin-right: 40px;
     border-radius: 45px;
     background: linear-gradient(45deg, #FF6A5B, #FD2B7A);
     box-shadow: 5px 10px 10px grey;

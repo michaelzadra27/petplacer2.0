@@ -22,7 +22,10 @@ form {
     box-shadow: 5px 10px 10px grey;
 }
 h2{
+    display: flex;
     padding: 20px;
+    justify-content: center;
+    font-size: 28px;
 }
 
 label{
@@ -47,8 +50,13 @@ input {
     margin-top: 10px;
     margin-bottom: 5px;
     border-radius: 45px;
+    color: white;
+    font-size: 18px;
     background: linear-gradient(45deg, #FF6A5B, #FD2B7A);
     box-shadow: 5px 10px 10px grey;
+}
+.login-button:hover{
+    cursor: pointer;
 }
 
 .signup-button {
@@ -60,6 +68,12 @@ input {
     margin-bottom: 10px;
     margin-top: 5px;
     border-radius: 45px;
+    color: white;
+    font-size: 18px;
     background: linear-gradient(45deg, #FF6A5B, #FD2B7A);
     box-shadow: 5px 10px 10px grey;
+}
+
+.signup-button:hover{
+    cursor: pointer;
 }

@@ -9,6 +9,7 @@ import Footer from './components/main/footer';
 import Navbar2 from './components/main/navbar2';
 import Home from './components/main/home';
 import MyLikes from './components/main/mylikes';
+import MyMatches from './components/main/mymatches';
 
 
 
