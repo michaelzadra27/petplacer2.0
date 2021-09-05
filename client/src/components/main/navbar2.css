@@ -1,7 +1,7 @@
 .navbar2{
-    display: inline-flex;
-    flex-direction: row;
+    display: flex;
     justify-content: center;
+    flex-direction: row;
     font-size: large;
     height: 50px;
     width: 95%;
@@ -10,6 +10,7 @@
     padding-left: 15px;
     padding-bottom: 15px;
     margin-top: 20px;
+    /* margin-left: 20px; */
     color: white;
 }
 
@@ -55,7 +56,10 @@ p{
   font-size: 24px;
   background-color: rgb(0, 0, 0);
   
-  
+}
+
+.btn.btn-primary:hover{
+  cursor: pointer;
 }
 
 .dropBtn.dropdown.btn-group{
@@ -67,8 +71,9 @@ p{
 
 a.dropdown-item{
   color: #000000;
-  margin-top: 10px;
-  padding-top: 20px;
+  width: 150px;
+  margin-top: 0px;
+  padding-top: 30px;
   position: relative;
   display: block;
   text-decoration: none;
@@ -76,5 +81,22 @@ a.dropdown-item{
 
 a.dropdown-item:hover{
   color: rgb(252, 79, 79);
-  width: 100%
+  width: 100%;
+  background: rgba(161, 161, 161, 0.1);
+}
+
+.menu:not(:hover) > .menu-dropdown > * {
+  visibility: hidden;
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0;
+  color: rgba(25,25,25,0);
+  transition: 
+    0.5s 0.1s height,
+    0.5s 0.1s padding,
+    0.5s 0.1s margin,
+    0.3s color,
+    0.6s visibility;
+  z-index: 99;
 }
