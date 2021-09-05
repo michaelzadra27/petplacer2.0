@@ -10,6 +10,10 @@
     color: white;
 }
 
+.petLogo:hover{
+    cursor: pointer;
+}
+
 h3{
     display: flex;
     align-items: center;
@@ -21,6 +25,9 @@ h3{
     flex-direction: row;
     align-items: center;
     margin-left: auto;
+}
+.links:hover{
+    cursor: pointer;
 }
 
 p{

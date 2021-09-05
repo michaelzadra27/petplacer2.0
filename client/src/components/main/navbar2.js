@@ -145,7 +145,7 @@ const Navbar2 = () => {
             </>
 
             <div className="linkAccounts">
-                <p>Link Accounts</p>
+                <p className="linkActs">Link Accounts</p>
             </div>
             <div className="searchButton">
                 <button className="search-button" onClick={getData}>Search</button>
