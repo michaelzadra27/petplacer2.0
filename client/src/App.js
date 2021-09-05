@@ -4,11 +4,11 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 //import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import Login from './components/login';
 import Signup from './components/signup';
-import Navbar from './components/main/navbar';
-import Footer from './components/main/footer';
+// import Navbar from './components/main/navbar';
+// import Footer from './components/main/footer';
 import Navbar2 from './components/main/navbar2';
 import Home from './components/main/home';
-import MyLikes from './components/main/mylikes';
+// import MyLikes from './components/main/mylikes';
 
 
 
@@ -20,28 +20,31 @@ import MyLikes from './components/main/mylikes';
 function App() {
   return (
     // <ApolloProvider client={client}>
-      
-      <Router>
-        <Navbar2/>
-        <div className="flex-column justify-center align-center min-100-vh bg-primary">
-          <Switch>
-            <Route exact path="/">
-              
-            </Route>
-            <Route exact path="/matchup">
-              {/* <Matchup /> */}
-            </Route>
-            <Route exact path="/matchup/:id">
-              {/* <Vote /> */}
-            </Route>
-            <Route>
-              {/* <NotFound /> */}
-            </Route>
-          </Switch>
-        </div>
-      </Router>
+
+    <Router>
+      <div className="flex-column justify-center align-center min-100-vh bg-primary">
+        <Switch>
+          <Route exact path="/">
+
+          </Route>
+          <Route exact path="/login">
+            <Login />
+            {/* <Matchup /> */}
+          </Route>
+          <Route exact path="/signup">
+            <Signup />
+            {/* <Vote /> */}
+          </Route>
+          <Route exact path="/home">
+            <Home />
+            {/* <NotFound /> */}
+          </Route>
+        </Switch>
+      </div>
+    </Router>
     // </ApolloProvider>
-  )};
+  )
+};
 
 export default App;
 
