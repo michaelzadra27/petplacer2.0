@@ -4,11 +4,10 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 //import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import Login from './components/login';
 import Signup from './components/signup';
-// import Navbar from './components/main/navbar';
-// import Footer from './components/main/footer';
+import Navbar from './components/main/navbar';
+import Footer from './components/main/footer';
 import Navbar2 from './components/main/navbar2';
 import Home from './components/main/home';
-
 import MyLikes from './components/main/mylikes';
 import MyMatches from './components/main/mymatches';
 
@@ -27,10 +26,11 @@ function App() {
     // <ApolloProvider client={client}>
 
     <Router>
-      <div className="flex-column justify-center align-center min-100-vh bg-primary">
+      <Navbar/>
+      {/* <div className="flex-column justify-center align-center min-100-vh bg-primary"> */}
         <Switch>
           <Route exact path="/">
-
+          <Navbar2/>
           </Route>
           <Route exact path="/login">
             <Login />
@@ -45,7 +45,8 @@ function App() {
             {/* <NotFound /> */}
           </Route>
         </Switch>
-      </div>
+        <Footer/>
+      {/* </div> */}
     </Router>
     // </ApolloProvider>
   )

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from 'react';
 import "./navbar2.css";
 import { DropdownButton, ButtonGroup, Dropdown } from 'react-bootstrap';
 import Home from "./home.js"
@@ -9,7 +9,7 @@ const secret = "vT3chXJ3ddzDrpStykKDftVGJ55X1nCGDXPOJJNN"
 const selections = {};
 
 function getData() {
-    
+
     const getToken = async () => {
 
         const params = new URLSearchParams();
@@ -26,7 +26,7 @@ function getData() {
         const data = await petRes.json();
         apiCall(data.access_token)
     };
-    
+
     getToken();
     function apiCall(access_token) {
         //Conditionally Call the API based on if there was a sex selected or not
@@ -67,93 +67,111 @@ function getData() {
 
 
 const Navbar2 = () => {
+
+    const [dogBreed, setBreed] = useState('Breed');
+    const [dogSex, setSex] = useState('Sex');
+    const [dogLocation, setLocation] = useState('Location');
     //Function handlers for the different dropdowns to get selected values into object
     const handleBreed = (e) => {
         console.log(e)
-        selections.breed = e
+        selections.breed = e;
         console.log(selections)
+        setBreed(e);
     };
 
     const handleSex = (e) => {
         console.log(e)
         selections.sex = e
         console.log(selections)
+        setSex(e);
     };
     const handleLocation = (e) => {
         console.log(e)
         selections.location = e
         console.log(selections)
+        setLocation(e);
     };
 
 
     return (
         <div>
-        <div className="navbar2">
-            <>
-                <DropdownButton
-                    className="dropBtn"
-                    as={ButtonGroup}
-                    key={"Breed"}
-                    // id={`dropdown-variants-${variant}`}
-                    title={"Breed"}
-                    onSelect={handleBreed}
-                >
-                    <Dropdown.Item eventKey="Beagle">Beagle</Dropdown.Item>
-                    <Dropdown.Item eventKey="Border Collie">Border Collie</Dropdown.Item>
-                    <Dropdown.Item eventKey="Boxer">Boxer</Dropdown.Item>
-                    <Dropdown.Item eventKey="Dachshund">Dachshund</Dropdown.Item>
-                    <Dropdown.Item eventKey="Golden Retriever">Golden Retriever</Dropdown.Item>
-                    <Dropdown.Item eventKey="Labrador Retriever">Labrador Retriever</Dropdown.Item>
-                    <Dropdown.Item eventKey="Poodle">Poodle</Dropdown.Item>
-                    <Dropdown.Item eventKey="Pug">Pug</Dropdown.Item>
-                    <Dropdown.Item eventKey="Rottweiler">Rottweiler</Dropdown.Item>
-                    <Dropdown.Item eventKey="Yorkshire Terrier">Yorkshire Terrier</Dropdown.Item>
-                </DropdownButton>
+            <div className="navbar2">
+                <>
+                    <DropdownButton
+                        className="dropBtn"
+                        as={ButtonGroup}
+                        key={"Breed"}
+                        // id={`dropdown-variants-${variant}`}
+                        title={"Breed"}
+                        onSelect={handleBreed}
+                    >
+                        <Dropdown.Item eventKey="Beagle">Beagle</Dropdown.Item>
+                        <Dropdown.Item eventKey="Border Collie">Border Collie</Dropdown.Item>
+                        <Dropdown.Item eventKey="Boxer">Boxer</Dropdown.Item>
+                        <Dropdown.Item eventKey="Dachshund">Dachshund</Dropdown.Item>
+                        <Dropdown.Item eventKey="Golden Retriever">Golden Retriever</Dropdown.Item>
+                        <Dropdown.Item eventKey="Labrador Retriever">Labrador Retriever</Dropdown.Item>
+                        <Dropdown.Item eventKey="Poodle">Poodle</Dropdown.Item>
+                        <Dropdown.Item eventKey="Pug">Pug</Dropdown.Item>
+                        <Dropdown.Item eventKey="Rottweiler">Rottweiler</Dropdown.Item>
+                        <Dropdown.Item eventKey="Yorkshire Terrier">Yorkshire Terrier</Dropdown.Item>
+                    </DropdownButton>
 
-                <DropdownButton
-                    className="dropBtn"
-                    as={ButtonGroup}
-                    key={"Sex"}
-                    // id={`dropdown-variants-${variant}`}
-                    title={"Sex"}
-                    onSelect={handleSex}
-                >
-                    <Dropdown.Item eventKey="Male">Male</Dropdown.Item>
-                    <Dropdown.Item eventKey="Female">Female</Dropdown.Item>
-                    <Dropdown.Item eventKey="Any">Any</Dropdown.Item>
-                </DropdownButton>
+                    <DropdownButton
+                        className="dropBtn"
+                        as={ButtonGroup}
+                        key={"Sex"}
+                        // id={`dropdown-variants-${variant}`}
+                        title={"Sex"}
+                        onSelect={handleSex}
+                    >
+                        <Dropdown.Item eventKey="Male">Male</Dropdown.Item>
+                        <Dropdown.Item eventKey="Female">Female</Dropdown.Item>
+                        <Dropdown.Item eventKey="Any">Any</Dropdown.Item>
+                    </DropdownButton>
 
-                <DropdownButton
-                    className="dropBtn"
-                    as={ButtonGroup}
-                    key={"Location"}
-                    // id={`dropdown-variants-${variant}`}
-                    title={"Location"}
-                    onSelect={handleLocation}
-                >
-                    <Dropdown.Item eventKey="California">California</Dropdown.Item>
-                    <Dropdown.Item eventKey="Colorado">Colorado</Dropdown.Item>
-                    <Dropdown.Item eventKey="Florida">Florida</Dropdown.Item>
-                    <Dropdown.Item eventKey="Georgia">Georgia</Dropdown.Item>
-                    <Dropdown.Item eventKey="Illinois">Illinois</Dropdown.Item>
-                    <Dropdown.Item eventKey="Michigan">Michigan</Dropdown.Item>
-                    <Dropdown.Item eventKey="New York">New York</Dropdown.Item>
-                    <Dropdown.Item eventKey="Ohio">Ohio</Dropdown.Item>
-                    <Dropdown.Item eventKey="Pennsylvania">Pennsylvania</Dropdown.Item>
-                    <Dropdown.Item eventKey="Texas">Texas</Dropdown.Item>
-                </DropdownButton>
-            </>
-
-            <div className="linkAccounts">
-                <p className="linkActs">Link Accounts</p>
+                    <DropdownButton
+                        className="dropBtn"
+                        as={ButtonGroup}
+                        key={"Location"}
+                        // id={`dropdown-variants-${variant}`}
+                        title={"Location"}
+                        onSelect={handleLocation}
+                    >
+                        <Dropdown.Item eventKey="California">California</Dropdown.Item>
+                        <Dropdown.Item eventKey="Colorado">Colorado</Dropdown.Item>
+                        <Dropdown.Item eventKey="Florida">Florida</Dropdown.Item>
+                        <Dropdown.Item eventKey="Georgia">Georgia</Dropdown.Item>
+                        <Dropdown.Item eventKey="Illinois">Illinois</Dropdown.Item>
+                        <Dropdown.Item eventKey="Michigan">Michigan</Dropdown.Item>
+                        <Dropdown.Item eventKey="New York">New York</Dropdown.Item>
+                        <Dropdown.Item eventKey="Ohio">Ohio</Dropdown.Item>
+                        <Dropdown.Item eventKey="Pennsylvania">Pennsylvania</Dropdown.Item>
+                        <Dropdown.Item eventKey="Texas">Texas</Dropdown.Item>
+                    </DropdownButton>
+                </>
+                <div className="selections">
+                    {dogBreed}
+                </div>
+                <div className="selections">
+                    {dogSex}
+                </div>
+                <div className="selections">
+                    {dogLocation}
+                </div>
+                <div className="linkAccounts">
+                    <p className="linkActs">Link Accounts</p>
+                </div>
+                <div className="searchButton">
+                    <button className="search-button" onClick={getData}>Search</button>
+                </div>
             </div>
-            <div className="searchButton">
-                <button className="search-button" onClick={getData}>Search</button>
+
+            <div className="spacer">
+                <Home />
             </div>
         </div>
-        <Home/>
-        </div>
-        
+
 
     );
 }
