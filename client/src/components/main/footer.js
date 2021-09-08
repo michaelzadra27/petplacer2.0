@@ -6,7 +6,8 @@ const Footer = () => {
             color: "white",
             height: "60px",
             alignItems: "center",
-            justifyContent: "center"
+            justifyContent: "center",
+            fontWeight: "100"
 
         }}>© Pet Placer 2021. All rights reserved</h4>
      );

@@ -36,8 +36,7 @@ p{
     font-weight: bolder;
 }
 
-/* p1{
-    display: flex;
-    margin-right: 40px;
-    font-size: smaller;
-} */
+.logout{
+    font-weight: 300;
+}
+

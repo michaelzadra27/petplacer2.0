@@ -7,7 +7,7 @@ const Navbar = () => {
             <img className="petLogo" src={Logo} alt="Pet Placer Logo"></img>
             <h3>Pet Placer</h3>
             <div className="links">
-                <p>Log Out</p>
+                <p className="logout">Log Out</p>
                 <p>My Likes</p>
                 <p>My Matches</p>
             </div>

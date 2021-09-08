@@ -109,3 +109,28 @@ a.dropdown-item:hover{
   z-index: 99;
 }
 
+.selectionBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+}
+
+p.preSelect {
+  font-style: italic;
+  font-weight: 100
+}
+
+.selections{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-style: italic;
+  font-weight: 100;
+  padding: 20px 7px 0px;
+}
+
+.spacer{
+  display: flex;
+  justify-content: center;
+}

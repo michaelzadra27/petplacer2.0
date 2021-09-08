@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "./navbar2.css";
 import { DropdownButton, ButtonGroup, Dropdown } from 'react-bootstrap';
-import Home from "./home.js"
+import Home from './home';
 
 const key = "3m8nwrVMxrsMJ4n6XvooyVdxjqVRqKMLiiIrR036M3ynyptSbR"
 const secret = "vT3chXJ3ddzDrpStykKDftVGJ55X1nCGDXPOJJNN"
@@ -150,6 +150,8 @@ const Navbar2 = () => {
                         <Dropdown.Item eventKey="Texas">Texas</Dropdown.Item>
                     </DropdownButton>
                 </>
+                <div className="selectionBar">
+                    <p className="preSelect">Your search: </p>
                 <div className="selections">
                     {dogBreed}
                 </div>
@@ -158,6 +160,7 @@ const Navbar2 = () => {
                 </div>
                 <div className="selections">
                     {dogLocation}
+                </div>
                 </div>
                 <div className="linkAccounts">
                     <p className="linkActs">Link Accounts</p>

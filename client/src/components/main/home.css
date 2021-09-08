@@ -9,8 +9,8 @@
 .card{
     padding: 30px;
     margin: 30px;
-    height: 400px;
-    width: 500px;
+    height: 50vh;
+    width: 25vw;
     border-radius: 45px;
     box-shadow: 5px 10px 10px grey;
 }
@@ -20,7 +20,7 @@
     justify-content: space-evenly;
 }
 .no-button {
-    width: 200px;
+    width: 150px;
     height: 70px;
     font-size: 32px;
     margin-top: 20px;
@@ -30,7 +30,7 @@
     box-shadow: 5px 10px 10px grey;
 }
 .yes-button {
-    width: 200px;
+    width: 150px;
     height: 70px;
     font-size: 32px;
     margin-top: 20px;
