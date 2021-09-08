@@ -28,6 +28,7 @@ function App() {
     <Router>
       <Navbar />
       {/* <div className="flex-column justify-center align-center min-100-vh bg-primary"> */}
+
       <Switch>
         <Route exact path="/">
           <Navbar2 />
@@ -52,6 +53,28 @@ function App() {
         </Route>
       </Switch>
       <Footer />
+
+        <Switch>
+          <Route exact path="/">
+
+          <Home/>
+
+          </Route>
+          <Route exact path="/login">
+            <Login />
+            {/* <Matchup /> */}
+          </Route>
+          <Route exact path="/signup">
+            <Signup />
+            {/* <Vote /> */}
+          </Route>
+          <Route exact path="/home">
+            <Home />
+            {/* <NotFound /> */}
+          </Route>
+        </Switch>
+        <Footer/>
+
       {/* </div> */}
     </Router>
     // </ApolloProvider>

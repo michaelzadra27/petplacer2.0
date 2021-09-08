@@ -9,12 +9,25 @@ const resolvers = {
         },
         findGroup: async (parent, { name }) => {
             return await Group.findOne({groupName: name})
+        },
+        me: async (parent, args, context) => {
+            console.log(context.user)
+            console.log(context.profile)
+            if(context.user) {
+                return Profile.findOne({_id: context.user._id})
+            } else {
+                throw new AuthenticationError('You need to be logged in')
+            }
         }
     },
 
     Mutation: {
-        signUp: async (parent, { email, password }) => {
-            return await Profile.create({ email: email }, { password: password })
+        signUp: async (parent, args) => {
+            console.log("hit")
+            console.log(args)
+            const profile = await Profile.create(args)
+            const token = signToken(profile)
+            return { token, profile }
         },
         login: async (parent, { email, password }) => {
             const profile = await Profile.findOne({ email })
@@ -32,15 +45,32 @@ const resolvers = {
             const token = signToken(profile)
             return { token, profile }
         },
-        createGroup: async (parent, { name, email }) => {
-            return await Group.create({ groupName: name }, { users: [email] })
+        createGroup: async (parent, { groupName, email }, context) => {
+            if(context.user){
+                const userProfile = await Profile.findOne({_id: context.user._id})
+                return await Group.create({ groupName: groupName, profiles: [userProfile] })
+            } else {
+                throw new AuthenticationError('You need to be logged in to create a group')
+            }
         },
-        joinGroup: async (parent, { name, email }) => {
-            const joinedGroup = await Group.findOneAndUpdate({ groupName: name },{ users: [...users, email] })
-            const joinedUser = await  Profile.findOneAndUpdate({ email: email }, { group: name })
+        joinGroup: async (parent, { groupName, email }, context) => {
+            if(context.user){
+                const joinedUser = await  Profile.findOneAndUpdate({ _id: context.user._id }, { group: groupName })
+                const joinedGroup = await Group.findOneAndUpdate({ groupName: groupName }, {$push: {profiles: joinedUser}})
+            return joinedGroup
+            } else {
+                throw new AuthenticationError('You need to be logged in to join a group')
+            }
         },
-        like: async (parent, { email, group, dogId }) => {
-            return await Like.create({userEmail: email}, { group: group }, { dog_ID: dogId })
+        like: async (parent, { email, group, dogId }, context) => {
+            if(context.user){
+            console.log(email)
+            console.log(group)
+            console.log(dogId)
+            return await Like.create({userId: context.user._id}, { group: group }, { dog_ID: dogId })
+            } else {
+                throw new AuthenticationError('You need to be logged in to like a pet')
+            }
         }
 
     }
