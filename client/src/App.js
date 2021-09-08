@@ -26,11 +26,39 @@ function App() {
     // <ApolloProvider client={client}>
 
     <Router>
-      <Navbar/>
+      <Navbar />
       {/* <div className="flex-column justify-center align-center min-100-vh bg-primary"> */}
+
+      <Switch>
+        <Route exact path="/">
+          <Navbar2 />
+        </Route>
+        <Route exact path="/login">
+          <Login />
+          {/* <Matchup /> */}
+        </Route>
+        <Route exact path="/signup">
+          <Signup />
+          {/* <Vote /> */}
+        </Route>
+        <Route exact path="/home">
+          <Home />
+          {/* <NotFound /> */}
+        </Route>
+        <Route exact path="/myLikes">
+          <MyLikes />
+        </Route>
+        <Route exact path="/myMatches">
+          <MyMatches />
+        </Route>
+      </Switch>
+      <Footer />
+
         <Switch>
           <Route exact path="/">
+
           <Home/>
+
           </Route>
           <Route exact path="/login">
             <Login />
@@ -46,6 +74,7 @@ function App() {
           </Route>
         </Switch>
         <Footer/>
+
       {/* </div> */}
     </Router>
     // </ApolloProvider>
