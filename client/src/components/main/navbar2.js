@@ -8,10 +8,10 @@ const secret = "vT3chXJ3ddzDrpStykKDftVGJ55X1nCGDXPOJJNN"
 
 const selections = {};
 
+var apiData = []
+
 function getData() {
-
     const getToken = async () => {
-
         const params = new URLSearchParams();
         params.append("grant_type", "client_credentials");
         params.append("client_id", key);
@@ -26,7 +26,6 @@ function getData() {
         const data = await petRes.json();
         apiCall(data.access_token)
     };
-
     getToken();
     function apiCall(access_token) {
         //Conditionally Call the API based on if there was a sex selected or not
@@ -58,8 +57,10 @@ function getData() {
                 .then(function (response) {
                     return response.json();
                 })
-                .then(function (data1) {
-                    console.log(data1)
+                .then(function ({ animals }) {
+                    // apiData.push(data1)
+                    console.log(animals)
+                    apiData.push(animals)
                 })
         };
     };
@@ -92,6 +93,10 @@ const Navbar2 = () => {
         setLocation(e);
     };
 
+    const test = () => {
+        var dogs = apiData[0]
+        console.log(dogs[0])
+    };
 
     return (
         <div>
@@ -169,14 +174,12 @@ const Navbar2 = () => {
                     <button className="search-button" onClick={getData}>Search</button>
                 </div>
             </div>
-
-            <div className="spacer">
-                <Home />
-            </div>
+            <Home />
         </div>
 
 
     );
 }
+
 
 export default Navbar2;

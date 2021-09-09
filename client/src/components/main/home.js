@@ -6,7 +6,7 @@ const Home = () => {
             <div className="card">
             <h2>Pet Matches Go Here</h2>
         </div>
-        <div className="selections">
+        <div className="selectionBtns">
             <button className="no-button">Boo</button>
             <button className="yes-button">Yay</button>
         </div>
