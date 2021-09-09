@@ -9,6 +9,7 @@ const secret = "vT3chXJ3ddzDrpStykKDftVGJ55X1nCGDXPOJJNN"
 const selections = {};
 
 var apiData = []
+var dogs = apiData[0]
 
 function getData() {
     const getToken = async () => {
@@ -59,12 +60,26 @@ function getData() {
                 })
                 .then(function ({ animals }) {
                     // apiData.push(data1)
-                    console.log(animals)
                     apiData.push(animals)
+                    // var dogs = apiData[0]
+                    console.log("LLLLLLLL")
+                    console.log(dogs)
+                    var start = Math.floor(Math.random() * dogs.length)
+                    console.log(start)
                 })
         };
     };
 }
+
+// const cycleCards = () => {
+
+//     dogID = dogs[i].id
+  
+//     dogoPhoto = data1.animals[i].photos[0].large
+    
+//     dogName = data1.animals[i].name
+
+// }
 
 
 const Navbar2 = () => {
@@ -91,11 +106,6 @@ const Navbar2 = () => {
         selections.location = e
         console.log(selections)
         setLocation(e);
-    };
-
-    const test = () => {
-        var dogs = apiData[0]
-        console.log(dogs[0])
     };
 
     return (
