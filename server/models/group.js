@@ -5,10 +5,11 @@ const Schema = mongoose.Schema;
 const groupSchema = new Schema({
   groupName: {
     type: String,
+    unique: true,
     trim: true,
-    required: 'Group must have a name of type string'
+    required: 'a group name of type string is required'
   },
-  users: {
+  profiles: {
     type: Array
   },
 });

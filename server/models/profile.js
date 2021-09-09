@@ -6,6 +6,7 @@ const Schema = mongoose.Schema;
 const profileSchema = new Schema({
   email: {
     type: String,
+    unique: true,
     trim: true,
     required: "Name of type string required for user"
   },
