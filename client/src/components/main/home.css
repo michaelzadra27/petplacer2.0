@@ -1,8 +1,7 @@
-.navbar2{
+/* .navbar2{
     display: flex;
     justify-content: center;
     flex-direction: row;
-    position: absolute;
     font-size: large;
     height: 50px;
     width: 100%;
@@ -13,13 +12,11 @@
     margin-right: 15px;
     color: white;
 }
-
 h3{
     display: flex;
     align-items: center;
     margin-left: 10px;
 }
-
 .linkAccounts {
     display: flex;
     flex-direction: row;
@@ -107,6 +104,28 @@ a.dropdown-item:hover{
   z-index: 99;
 }
 
+.selectionBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+}
+p.preSelect {
+  font-style: italic;
+  font-weight: 100
+}
+.selections{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-style: italic;
+  font-weight: 100;
+  padding: 20px 7px 0px;
+}
+.spacer{
+  display: flex;
+  justify-content: center;
+}
 
 .petDisplay {
   display: flex;
@@ -148,6 +167,7 @@ a.dropdown-item:hover{
   border-radius: 45px;
   background: linear-gradient(45deg, #FF6A5B, #FD2B7A);
   box-shadow: 5px 10px 10px grey;
+<<<<<<< HEAD
 }
 .navbar2{
     display: flex;
@@ -268,3 +288,6 @@ p.preSelect {
   display: flex;
   justify-content: center;
 }
+=======
+} */
+>>>>>>> master
