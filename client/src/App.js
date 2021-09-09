@@ -31,7 +31,6 @@ function App() {
 
       <Switch>
         <Route exact path="/">
-          <Navbar2 />
         </Route>
         <Route exact path="/login">
           <Login />
