@@ -100,7 +100,8 @@ const Navbar2 = () => {
     };
 
     return (
-        <div>
+        
+        <div className = "blockME">
             <div className="navbar2">
                 <>
                     <DropdownButton
@@ -158,15 +159,15 @@ const Navbar2 = () => {
                 </>
                 <div className="selectionBar">
                     <p className="preSelect">Your search: </p>
-                <div className="selections">
-                    {dogBreed}
-                </div>
-                <div className="selections">
-                    {dogSex}
-                </div>
-                <div className="selections">
-                    {dogLocation}
-                </div>
+                    <div className="selections">
+                        {dogBreed}
+                    </div>
+                    <div className="selections">
+                        {dogSex}
+                    </div>
+                    <div className="selections">
+                        {dogLocation}
+                    </div>
                 </div>
                 <div className="linkAccounts">
                     <p className="linkActs">Link Accounts</p>
@@ -176,15 +177,18 @@ const Navbar2 = () => {
                 </div>
             </div>
             {/* <Home /> */}
+            <div className = "test">
+                TESTING
+            </div>
             <div className="petDisplay">
-            <div className="card">
-                <h2>Pet Matches Go Here</h2>
+                <div className="card">
+                    <h2>Pet Matches Go Here</h2>
+                </div>
+                <div className="selectionBtns">
+                    <button className="no-button">Boo</button>
+                    <button className="yes-button">Yay</button>
+                </div>
             </div>
-            <div className="selectionBtns">
-                <button className="no-button">Boo</button>
-                <button className="yes-button">Yay</button>
-            </div>
-        </div>
         </div>
 
 
