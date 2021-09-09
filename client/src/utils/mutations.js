@@ -21,9 +21,8 @@ export const JOIN_GROUP = gql`
 `
 
 export const SIGN_UP = gql`
-    mutation signUp($email: String! $password: String!){
-        signUp(email: $email password: $password){
-            token
+    mutation signup($email: String!, $password: String!){
+        signUp(email: $email, password: $password){
             profile{
                 _id
                 email

@@ -7,7 +7,6 @@ const expiration = "2h";
 module.exports = {
     // function for our authenticated routes
     authMiddleware: function ({ req }) {
-        console.log("hit")
 
         let token = req.body.token || req.query.token || req.headers.authorization;
 
@@ -18,7 +17,6 @@ module.exports = {
         }
 
         if (!token) {
-            console.log("return")
             return req;
         }
 
