@@ -53,26 +53,7 @@ function App() {
       </Switch>
       <Footer />
 
-        <Switch>
-          <Route exact path="/">
-          <Navbar2/>
-          </Route>
-          <Route exact path="/login">
-            <Login />
-            {/* <Matchup /> */}
-          </Route>
-          <Route exact path="/signup">
-            <Signup />
-            {/* <Vote /> */}
-          </Route>
-          <Route exact path="/home">
-            <Home />
-            {/* <NotFound /> */}
-          </Route>
-        </Switch>
-        <Footer/>
-
-      {/* </div> */}
+        
     </Router>
     // </ApolloProvider>
   )
