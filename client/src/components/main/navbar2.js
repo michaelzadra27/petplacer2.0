@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import "./navbar2.css";
 import { DropdownButton, ButtonGroup, Dropdown } from 'react-bootstrap';
-// import Home from './home';
-// import "./home.css"
+
 
 const key = "3m8nwrVMxrsMJ4n6XvooyVdxjqVRqKMLiiIrR036M3ynyptSbR"
 const secret = "vT3chXJ3ddzDrpStykKDftVGJ55X1nCGDXPOJJNN"
@@ -100,12 +99,7 @@ const Navbar2 = () => {
     };
 
     return (
-<<<<<<< HEAD
-        
-        <div className = "blockME">
-=======
-        <div className="blockMe">
->>>>>>> master
+        <div>
             <div className="navbar2">
                 <>
                     <DropdownButton
@@ -180,10 +174,8 @@ const Navbar2 = () => {
                     <button className="search-button" onClick={getData}>Search</button>
                 </div>
             </div>
-            {/* <Home /> */}
-            <div className = "test">
-                TESTING
-            </div>
+            
+            
             <div className="petDisplay">
                 <div className="card">
                     <h2>Pet Matches Go Here</h2>
@@ -194,6 +186,7 @@ const Navbar2 = () => {
                 </div>
             </div>
         </div>
+        
 
 
     );

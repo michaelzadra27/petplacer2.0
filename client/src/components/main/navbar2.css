@@ -145,12 +145,6 @@ box-shadow: 5px 10px 10px grey;
 
 .selectionBtns {
   display: flex;
-<<<<<<< HEAD
-  justify-content: center;
-}
-
-
-=======
   justify-content: space-evenly;
   margin-bottom: 40px;
 }
@@ -174,4 +168,3 @@ border-radius: 45px;
 background: linear-gradient(45deg, #FF6A5B, #FD2B7A);
 box-shadow: 5px 10px 10px grey;
 }
->>>>>>> master

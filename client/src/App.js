@@ -28,10 +28,7 @@ function App() {
     <Router>
       <Navbar />
       {/* <div className="flex-column justify-center align-center min-100-vh bg-primary"> */}
-<<<<<<< HEAD
-=======
      
->>>>>>> master
       <Switch>
         <Route exact path="/">
           <Navbar2 />
