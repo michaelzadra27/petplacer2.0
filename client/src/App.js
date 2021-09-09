@@ -11,6 +11,44 @@ import Home from './components/main/home';
 import MyLikes from './components/main/mylikes';
 import MyMatches from './components/main/mymatches';
 
+import { setContext } from '@apollo/client/link/context'
+
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/react-hooks'
+
+
+const httpLink = createHttpLink({ uri: '/graphql'})
+
+const authLink = setContext((_, { headers }) => {
+  // get the authentication token from local storage if it exists
+  const token = localStorage.getItem('id_token');
+  // return the headers to the context so httpLink can read them
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
+
+const client = new ApolloClient({
+  request: operation => {
+    const token = localStorage.getItem('id_token')
+    operation.setContext({
+      headers: {
+        authorization: token ? `Bearer ${token}` : ''
+      }
+    })
+  },
+  uri: 'https://localhost:3001/graphql',
+  cache: new InMemoryCache(),
+})
+
 // import MyLikes from './components/main/mylikes';
 
 
@@ -23,7 +61,7 @@ import MyMatches from './components/main/mymatches';
 
 function App() {
   return (
-    // <ApolloProvider client={client}>
+  <ApolloProvider client={client}>
 
     <Router>
       <Navbar />
@@ -53,8 +91,10 @@ function App() {
         </Route>
       </Switch>
       <Footer />
+
+
     </Router>
-    // </ApolloProvider>
+  </ApolloProvider>
   )
 };
 

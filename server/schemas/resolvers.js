@@ -23,7 +23,7 @@ const resolvers = {
 
     Mutation: {
         signUp: async (parent, args) => {
-            console.log("hit")
+            console.log("sign up")
             console.log(args)
             const profile = await Profile.create(args)
             const token = signToken(profile)
