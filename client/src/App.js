@@ -66,7 +66,7 @@ function App() {
     <Router>
       <Navbar />
       {/* <div className="flex-column justify-center align-center min-100-vh bg-primary"> */}
-
+     
       <Switch>
         <Route exact path="/">
           <Navbar2 />
@@ -92,7 +92,7 @@ function App() {
       </Switch>
       <Footer />
 
-      {/* </div> */}
+
     </Router>
   </ApolloProvider>
   )
