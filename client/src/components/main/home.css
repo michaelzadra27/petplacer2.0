@@ -124,9 +124,10 @@ a.dropdown-item:hover{
   box-shadow: 5px 10px 10px grey;
 }
 
-.selections {
-  display: flex;
-  justify-content: space-evenly;
+.selectionBtns {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
 }
 .no-button {
   width: 200px;
