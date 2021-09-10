@@ -6,6 +6,7 @@ import { DropdownButton, ButtonGroup, Dropdown } from 'react-bootstrap';
 
 const key = "3m8nwrVMxrsMJ4n6XvooyVdxjqVRqKMLiiIrR036M3ynyptSbR"
 const secret = "vT3chXJ3ddzDrpStykKDftVGJ55X1nCGDXPOJJNN"
+const dogID = []
 
 const selections = {};
 
@@ -178,7 +179,8 @@ const Navbar2 = () => {
             {/* <Home /> */}
             <div className="petDisplay">
             <div className="card">
-                <h2>Pet Matches Go Here</h2>
+                <h2 className="petName">Pet Matches Go Here</h2>
+                <div className="petMatchImg">animalCard.setAttribute("dogID", `${dogID}`)</div>
             </div>
             <div className="selectionBtns">
                 <button className="no-button">Boo</button>
