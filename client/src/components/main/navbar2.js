@@ -95,10 +95,10 @@ const Navbar2 = () => {
         setLocation(e);
     };
 
-    const test = () => {
-        var dogs = apiData[0]
-        console.log(dogs[0])
-    };
+    // const test = () => {
+    //     var dogs = apiData[0]
+    //     console.log(dogs[0])
+    // };
 
     return (
         <div className="blockMe">

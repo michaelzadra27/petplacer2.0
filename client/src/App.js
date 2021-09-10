@@ -1,4 +1,4 @@
-import './App.css';
+// import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 //import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
@@ -31,7 +31,7 @@ function App() {
      
       <Switch>
         <Route exact path="/">
-          <Navbar2 />
+          <Signup />
         </Route>
         <Route exact path="/login">
           <Login />

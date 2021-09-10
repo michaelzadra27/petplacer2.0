@@ -37,8 +37,8 @@ p{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 200px;
-  padding: 10px;
+  width: 170px;
+  padding: 4px;
   margin-right: 20px;
   margin-bottom: 5px;
   border-radius: 45px;
@@ -75,7 +75,7 @@ width: 100px;
 
 a.dropdown-item{
 color: #000000;
-width: 150px;
+width: 170px;
 margin-top: 0px;
 padding-top: 30px;
 position: relative;
@@ -112,14 +112,14 @@ z-index: 99;
 }
 p.preSelect {
 font-style: italic;
-font-weight: 100
+font-weight: 300
 }
 .selections{
 display: flex;
 justify-content: center;
 align-content: center;
 font-style: italic;
-font-weight: 100;
+font-weight: 200;
 padding: 20px 7px 0px;
 }
 .spacer{
