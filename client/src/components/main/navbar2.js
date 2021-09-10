@@ -5,11 +5,15 @@ import { DropdownButton, ButtonGroup, Dropdown } from 'react-bootstrap';
 
 const key = "3m8nwrVMxrsMJ4n6XvooyVdxjqVRqKMLiiIrR036M3ynyptSbR"
 const secret = "vT3chXJ3ddzDrpStykKDftVGJ55X1nCGDXPOJJNN"
+const dogID = []
 
 const selections = {};
 
 var apiData = []
 var dogs = apiData[0]
+
+
+
 
 const Navbar2 = () => {
 
@@ -119,6 +123,7 @@ const Navbar2 = () => {
     };
 
 
+
     const CycleCards = () => {
     var dogs = apiData[0];
     console.log(dogs.length)
@@ -134,6 +139,7 @@ const Navbar2 = () => {
     
     
     }
+
 
     return (
         <div>
@@ -214,6 +220,7 @@ const Navbar2 = () => {
 
             {/* Pet Display Cards */}
             <div className="petDisplay">
+
                 <div className="card">
                     <h2>Pet Matches Go Here</h2>
                     <p className="petName">{dogName}</p>
@@ -224,6 +231,7 @@ const Navbar2 = () => {
                     <button className="no-button" onClick={CycleCards}>Boo</button>
                     <button className="yes-button" onClick={CycleCards}>Yay</button>
                 </div>
+
             </div>
         </div>
 
