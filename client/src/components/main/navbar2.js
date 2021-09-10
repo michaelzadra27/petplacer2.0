@@ -11,70 +11,6 @@ const selections = {};
 var apiData = []
 var dogs = apiData[0]
 
-// function getData() {
-//     const getToken = async () => {
-//         const params = new URLSearchParams();
-//         params.append("grant_type", "client_credentials");
-//         params.append("client_id", key);
-//         params.append("client_secret", secret);
-//         const petRes = await fetch(
-//             "https://api.petfinder.com/v2/oauth2/token",
-//             {
-//                 method: "POST",
-//                 body: params,
-//             }
-//         );
-//         const data = await petRes.json();
-//         apiCall(data.access_token)
-//     };
-//     getToken();
-//     function apiCall(access_token) {
-//         //Conditionally Call the API based on if there was a sex selected or not
-//         if (selections.sex === "Any") {
-//             fetch(
-//                 `https://api.petfinder.com/v2/animals?type=dog&breed=${selections.breed}&location=${selections.location}`,
-//                 {
-//                     headers: {
-//                         Authorization: `Bearer ${access_token}`,
-//                     },
-//                 }
-//             )
-//                 .then(function (response) {
-//                     return response.json();
-//                 })
-//                 .then(function (data1) {
-//                     console.log(data1)
-//                 })
-//         }
-//         else {
-//             fetch(
-//                 `https://api.petfinder.com/v2/animals?type=dog&breed=${selections.breed}&sex=${selections.sex}&location=${selections.location}`,
-//                 {
-//                     headers: {
-//                         Authorization: `Bearer ${access_token}`,
-//                     },
-//                 }
-//             )
-//                 .then(function (response) {
-//                     return response.json();
-//                 })
-//                 .then(function ({ animals }) {
-//                     // apiData.push(data1)
-//                     apiData.push(animals)
-//                     // var dogs = apiData[0]
-//                     console.log(apiData)
-//                     var dogs = apiData[0];
-//                     var start = Math.floor(Math.random() * dogs.length)
-//                     console.log(start)
-                    
-//                 })
-
-//         };
-//     };
-// }
-
-
-
 const Navbar2 = () => {
 
     function getData() {
@@ -285,7 +221,7 @@ const Navbar2 = () => {
 
                 </div>
                 <div className="selectionBtns">
-                    <button className="no-button">Boo</button>
+                    <button className="no-button" onClick={CycleCards}>Boo</button>
                     <button className="yes-button" onClick={CycleCards}>Yay</button>
                 </div>
             </div>
