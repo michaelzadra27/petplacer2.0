@@ -3,10 +3,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const likeSchema = new Schema({
-  userEmail: {
+  email: {
     type: String,
-    unnique: true,
-    required: 'like must contain a user id of type string'
+    unique: true,
+    required: 'like must contain a user id of type string',
   },
   groupName: {
     type: String,

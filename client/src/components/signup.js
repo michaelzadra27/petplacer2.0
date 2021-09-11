@@ -21,6 +21,9 @@ const Signup = () => {
         console.log(newUser)
     }
 
+
+
+
     return (
         <div className="signupForm">
             <div className="card">
