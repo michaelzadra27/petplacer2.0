@@ -219,8 +219,8 @@ const Navbar2 = () => {
             <div className="petDisplay">
 
                 <div className="card">
-                    <h2>Pet Matches Go Here</h2>
                     <p className="petName">{dogName}</p>
+
                     <img src={dogImage} className="petMatchImg"/>
 
                 </div>
