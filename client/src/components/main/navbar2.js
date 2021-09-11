@@ -12,6 +12,12 @@ const selections = {};
 var apiData = []
 var dogs = apiData[0]
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> dd7686bf351da4fffbd237f8f97584e9cc228999
 const Navbar2 = () => {
 
     function getData() {
