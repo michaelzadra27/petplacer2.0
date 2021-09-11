@@ -61,13 +61,29 @@ const Navbar2 = () => {
                         return response.json();
                     })
                     .then(function ({ animals }) {
-                        // apiData.push(data1)
+                        
+                        if (selections.sex === undefined && selections.breed === undefined && selections.location === undefined){
+                            alert("Please select a Breed, Sex, and Location before searching")
+                            return
+                           }
+                        if (selections.sex === undefined){
+                            alert("Please select Sex")
+                            return
+                        }
+                        if (selections.breed === undefined){
+                            alert("Please select Breed")
+                            return
+                        }
+                        if (selections.location === undefined){
+                            alert("Please select Location")
+                            return
+                        }
                         apiData.push(animals)
                         // var dogs = apiData[0]
                         console.log(apiData)
-                        var dogs = apiData[0];
-                        var start = Math.floor(Math.random() * dogs.length)
-                        RenderFirst(start)
+                        //var dogs = apiData[0];
+                        //var start = Math.floor(Math.random() * dogs.length)
+                        RenderFirst()
                         
                     })
     
@@ -75,11 +91,11 @@ const Navbar2 = () => {
         };
     }
     
-   const RenderFirst = (start) => {
-    console.log(start + " HERE")
+   const RenderFirst = () => {
+       
     var dogs = apiData[0];
     //Randomly start at one of the dogs returned
-    
+    var start = Math.floor(Math.random() * dogs.length)
     var dogIdApi = dogs[start].id
     var dogPhotoApi = dogs[start].photos[0].large
     var dogNameApi = dogs[start].name
@@ -211,7 +227,7 @@ const Navbar2 = () => {
                     <p className="linkActs">Link Accounts</p>
                 </div>
                 <div className="searchButton">
-                    <button className="search-button" onClick={getData}>Search</button>
+                    <button className="search-button"  onClick={getData}>Search</button>
                 </div>
             </div>
 
