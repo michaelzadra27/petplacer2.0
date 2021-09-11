@@ -24,6 +24,7 @@ import Navbar2 from './components/main/navbar2';
 import Home from './components/main/home';
 import MyLikes from './components/main/mylikes';
 import MyMatches from './components/main/mymatches';
+import LinkAccts from './components/main/linkAccts';
 
 
 // const authLink = setContext((_, { headers }) => {
@@ -91,7 +92,7 @@ function App() {
 
   <Switch>
     <Route exact path="/">
-      <Navbar2 />
+      <LinkAccts />
     </Route>
     <Route exact path="/login">
       <Login />
