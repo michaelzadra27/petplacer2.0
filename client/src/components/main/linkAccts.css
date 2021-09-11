@@ -1,0 +1,94 @@
+
+.findAccts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.linkCard{
+    padding: 30px;
+    margin-top: 30px;
+    height: 50vh;
+    width: 50vw;
+    border-radius: 45px;
+    box-shadow: 5px 10px 10px grey;
+}
+
+h4 {
+    display: flex;
+    justify-content: center;
+    font-size: 26px;
+    margin-bottom: 1em;
+}
+
+.acctForm{
+    display: flex;
+}
+
+.linkForm{
+    display: flex;
+    width: 300px;
+}
+
+.linkSearchBtn {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 20%;
+    margin-top: 20px;
+    margin-left: 30px;
+    border-radius: 45px;
+    color: white;
+    font-size: 18px;
+    background: linear-gradient(45deg, #FF6A5B, #FD2B7A);
+    box-shadow: 5px 10px 10px grey;
+}
+.linkSearchBtn:hover{
+    cursor: pointer;
+}
+
+.linkResults{
+    display: flex;
+}
+.emailResults{
+    margin-top: 13px;
+}
+.linkResultBtn {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 25%;
+    margin-top: 10px;
+    margin-left: 20px;
+    border-radius: 45px;
+    color: white;
+    font-size: 18px;
+    background: linear-gradient(45deg, #FF6A5B, #FD2B7A);
+    box-shadow: 5px 10px 10px grey;
+}
+.linkResultBtn:hover{
+    cursor: pointer;
+}
+.closeBtnDiv{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.closeLinkBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    padding: 2px;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 45px;
+    color: white;
+    font-size: 18px;
+    background: linear-gradient(45deg, #FF6A5B, #FD2B7A);
+    box-shadow: 5px 10px 10px grey;
+}
+.closeLinkBtn:hover{
+    cursor: pointer;
+}
