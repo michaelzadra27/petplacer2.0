@@ -123,12 +123,15 @@ align-items: center;
 
 }
 .card{
+  display:flex;
 padding: 30px;
 margin: 30px;
 height: 400px;
 width: 500px;
 border-radius: 45px;
 box-shadow: 5px 10px 10px grey;
+justify-content: center;
+
 }
 
 .petName{
@@ -147,6 +150,8 @@ box-shadow: 5px 10px 10px grey;
   /* min-width: 100%;
   min-height: 100% */
   height: 350px;
+  object-fit: contain;
+  justify-content: center;
 
 }
 
