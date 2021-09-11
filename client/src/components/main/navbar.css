@@ -25,6 +25,7 @@ h3{
     flex-direction: row;
     align-items: center;
     margin-left: auto;
+    text-decoration: none;
     
 }
 .links:hover{

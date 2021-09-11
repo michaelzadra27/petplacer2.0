@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import "./navbar2.css";
 import { DropdownButton, ButtonGroup, Dropdown } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 
 
 const key = "3m8nwrVMxrsMJ4n6XvooyVdxjqVRqKMLiiIrR036M3ynyptSbR"
@@ -224,7 +225,7 @@ const Navbar2 = () => {
                     </div>
                 </div>
                 <div className="linkAccounts">
-                    <p className="linkActs">Link Accounts</p>
+                    <p className="linkActs"><Link to = "/mymatches" style={{ textDecoration: 'none', color: "white" }}>Link Accounts</Link></p>
                 </div>
                 <div className="searchButton">
                     <button className="search-button"  onClick={getData}>Search</button>
