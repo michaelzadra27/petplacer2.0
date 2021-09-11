@@ -11,9 +11,6 @@ const selections = {};
 var apiData = []
 var dogs = apiData[0]
 
-
-
-
 const Navbar2 = () => {
 
     function getData() {
@@ -90,6 +87,7 @@ const Navbar2 = () => {
     console.log(dogPhotoApi)
     console.log(dogIdApi)
     setName(dogNameApi) 
+    setImage(dogPhotoApi)
    }
 
     //Setting up State to update NavBar with selections
@@ -98,7 +96,7 @@ const Navbar2 = () => {
     const [dogLocation, setLocation] = useState('Location');
 
     const [dogName, setName] = useState('Dog Name');
-    const [dogImage, setImage] = useState()
+    const [dogImage, setImage] = useState('')
 
     //Function handlers for the different dropdowns to get selected values into object
     const handleBreed = (e) => {
@@ -222,7 +220,8 @@ const Navbar2 = () => {
 
                 <div className="card">
                     <p className="petName">{dogName}</p>
-                    <img src={dogImage} alt="dog" className="petMatchImg"/>
+
+                    <img src={dogImage} className="petMatchImg"/>
 
                 </div>
                 <div className="selectionBtns">
