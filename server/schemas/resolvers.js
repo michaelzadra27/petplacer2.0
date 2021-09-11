@@ -26,8 +26,8 @@ const resolvers = {
         },
         getMatches: async (parent, { groupName }) => {
             console.log(groupName)
-            const data = await Profile.find({groupName: groupName})
-            console.log(data)
+            const groupLikes = await Like.find({groupName: groupName}, {userEmail: 0, groupName: 0, _id: 0, __v: 0})
+            console.log(groupLikes)
         }
     },
 
