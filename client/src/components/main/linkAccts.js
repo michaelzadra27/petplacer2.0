@@ -4,7 +4,7 @@ const LinkAccts = () => {
     return ( 
         <div className="findAccts">
             <div className="linkCard">
-            <h4>Join a Group</h4>
+            <h4 className="title">Join a Group</h4>
             <div className="acctForm">
                 <form className="linkForm">
                     <label>Search for Group</label>
@@ -19,6 +19,17 @@ const LinkAccts = () => {
             <p className="emailResults">Groups display here</p>
             <button className="linkResultBtn">Join</button>
         </div>
+        <h4 className="title">Create a Group</h4>
+            <div className="acctForm">
+                <form className="linkForm">
+                    <label>Create a Group</label>
+                    <input
+                        type = "text"
+                        required
+                    /> 
+                </form>
+                <button className="linkSearchBtn">Create</button>   
+            </div>
         <div className="closeBtnDiv">
         <button className="closeLinkBtn">Close</button> 
         </div>
