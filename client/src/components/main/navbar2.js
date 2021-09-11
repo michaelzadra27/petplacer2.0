@@ -233,12 +233,10 @@ const Navbar2 = () => {
 
             {/* Pet Display Cards */}
             <div className="petDisplay">
-
+            
                 <div className="card">
-                    <p className="petName">{dogName}</p>
-
+                <p className="petName">{dogName}</p>
                     <img src={dogImage} className="petMatchImg"/>
-
                 </div>
                 <div className="selectionBtns">
                     <button className="no-button" onClick={CycleCards}>Boo</button>
