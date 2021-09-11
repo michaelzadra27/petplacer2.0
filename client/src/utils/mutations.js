@@ -5,7 +5,9 @@ export const CREATE_GROUP = gql`
         createGroup(groupName: $groupName, email: $email){
             _id
             groupName
-            email
+            profile{
+              email
+            }
         }
     }
 `
@@ -15,7 +17,9 @@ export const JOIN_GROUP = gql`
         joinGroup(groupName: $groupName, email: $email){
             _id
             groupName
-            email
+            profile{
+                email
+            }
         }
     }
 `
@@ -31,3 +35,12 @@ export const SIGN_UP = gql`
         }
     }
 `
+
+export const LIKE = gql`
+    mutation like($email: String!, $groupName: String!, $dog_ID:ID!){
+        like(email: $email, groupName: $groupName, dog_ID: $dog_ID){
+            dog_ID
+        }
+    }
+`
+

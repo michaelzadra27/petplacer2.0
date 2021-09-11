@@ -15,9 +15,13 @@ const typeDefs = gql`
 
     type like {
         _id: ID
-        email: String
-        group: String
+        userEmail: String
+        groupName: String
         dog_ID: Int
+    }
+
+    type likes {
+        likes: [like]
     }
 
     type Auth {
@@ -29,6 +33,8 @@ const typeDefs = gql`
         me: Profile
         profiles: [Profile]
         findGroup(name: String!): Group
+        getLikes(email: String!): [like]
+        getMatches(groupName: String!): like
     }
 
     type Mutation {
@@ -36,7 +42,7 @@ const typeDefs = gql`
         login(email: String!, password: String!): Auth
         createGroup(groupName: String!, email: String!): Group
         joinGroup(groupName: String!, email: String!): Group
-        like(email: String!, group: String!, dog_ID: Int!): like
+        like(email: String!, groupName: String!, dog_ID: ID!): like
     }
 `
 

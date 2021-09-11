@@ -18,6 +18,16 @@ const resolvers = {
             } else {
                 throw new AuthenticationError('You need to be logged in')
             }
+        },
+        getLikes: async (parent, { email }) => {
+            console.log(email)
+            const likes = await Like.find({userEmail: email})
+            return likes
+        },
+        getMatches: async (parent, { groupName }) => {
+            console.log(groupName)
+            const data = await Profile.find({groupName: groupName})
+            console.log(data)
         }
     },
 
@@ -46,32 +56,29 @@ const resolvers = {
             return { token, profile }
         },
         createGroup: async (parent, { groupName, email }, context) => {
-            if(context.user){
-                const userProfile = await Profile.findOne({_id: context.user._id})
+            // if(context.user){
+                const userProfile = await Profile.findOne({email: email})
                 return await Group.create({ groupName: groupName, profiles: [userProfile] })
-            } else {
-                throw new AuthenticationError('You need to be logged in to create a group')
-            }
+            // } else {
+            //     throw new AuthenticationError('You need to be logged in to create a group')
+            // }
         },
         joinGroup: async (parent, { groupName, email }, context) => {
-            if(context.user){
-                const joinedUser = await  Profile.findOneAndUpdate({ _id: context.user._id }, { group: groupName })
+            // if(context.user){
+                const joinedUser = await  Profile.findOneAndUpdate({ email: email }, { group: groupName })
                 const joinedGroup = await Group.findOneAndUpdate({ groupName: groupName }, {$push: {profiles: joinedUser}})
             return joinedGroup
-            } else {
-                throw new AuthenticationError('You need to be logged in to join a group')
-            }
+            // } else {
+            //     throw new AuthenticationError('You need to be logged in to join a group')
+            // }
         },
-        like: async (parent, { email, group, dogId }, context) => {
-            if(context.user){
-            console.log(email)
-            console.log(group)
-            console.log(dogId)
-            return await Like.create({userId: context.user._id}, { group: group }, { dog_ID: dogId })
-            } else {
-                throw new AuthenticationError('You need to be logged in to like a pet')
-            }
-        }
+        like: async (parent, { email, groupName, dog_ID }, context) => {
+            // if(context.user){
+            return await Like.create({userEmail: email, groupName: groupName, dog_ID: dog_ID })
+            // } else {
+            //     throw new AuthenticationError('You need to be logged in to like a pet')
+            // }
+        },
 
     }
 }
