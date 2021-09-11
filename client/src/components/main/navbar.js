@@ -8,8 +8,8 @@ const Navbar = () => {
             <h3>Pet Placer</h3>
             <div className="links">
                 <p className="logout">Log Out</p>
-                <p>My Likes</p>
-                <p>My Matches</p>
+                <p className="matching">My Likes</p>
+                <p className="matching">My Matches</p>
             </div>
         </div>
      );

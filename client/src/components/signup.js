@@ -17,7 +17,8 @@ const Signup = () => {
     const handleFormSubmit= async (event) => {
         event.preventDefault()
         console.log(formData)
-        const newUser = addUser({ variables: {...formData} })
+        const newUser = await addUser({ variables: {...formData}})
+        console.log(newUser)
     }
 
     return (
@@ -28,7 +29,6 @@ const Signup = () => {
                 <label>Email</label>
                 <input
                     type = "text"
-                    required
                     name='email'
                     onChange={handleInputChange}
                     value={formData.email}
@@ -36,7 +36,6 @@ const Signup = () => {
                 <label>Password</label>
                 <input
                     type = "text"
-                    required
                     name='password'
                     onChange={handleInputChange}
                     value={formData.password}
