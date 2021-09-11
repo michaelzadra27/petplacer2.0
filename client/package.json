@@ -40,6 +40,7 @@
     ]
   },
   "devDependencies": {
+    "@iconify/react": "^3.0.1",
     "web-vitals": "^1.1.2"
   }
 }
