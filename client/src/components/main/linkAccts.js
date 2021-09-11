@@ -28,7 +28,7 @@ const LinkAccts = () => {
                         required
                     /> 
                 </form>
-                <button className="linkSearchBtn">Create</button>   
+                <button className="createGroupBtn">Create</button>   
             </div>
         <div className="closeBtnDiv">
         <button className="closeLinkBtn">Close</button> 
