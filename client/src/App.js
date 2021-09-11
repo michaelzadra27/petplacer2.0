@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {
   InMemoryCache,
@@ -23,6 +24,7 @@ import Navbar2 from './components/main/navbar2';
 import Home from './components/main/home';
 import MyLikes from './components/main/mylikes';
 import MyMatches from './components/main/mymatches';
+import LinkAccts from './components/main/linkAccts';
 
 
 // const authLink = setContext((_, { headers }) => {
@@ -54,32 +56,7 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    // <ApolloProvider client={client}>
-    //   <Router>
-    //     <div className="flex-column justify-flex-start min-100-vh">
-    //       <Header />
-    //       <div className="container">
-    //         <Route exact path="/">
-    //           <Home />
-    //         </Route>
-    //         <Route exact path="/login">
-    //           <Login />
-    //         </Route>
-    //         <Route exact path="/signup">
-    //           <Signup />
-    //         </Route>
-    //         <Route exact path="/me">
-    //           <Profile />
-    //         </Route>
-    //         <Route exact path="/profiles/:profileId">
-    //           <Profile />
-    //         </Route>
-    //       </div>
-    //       <Footer />
-    //     </div>
-    //   </Router>
-    // </ApolloProvider>
-
+   
 
 <ApolloProvider client={client}>
 
@@ -108,6 +85,9 @@ function App() {
     </Route>
     <Route exact path="/myMatches">
       <MyMatches />
+    </Route>
+    <Route exact path="/linkaccts">
+      <LinkAccts />
     </Route>
   </Switch>
   <Footer />
