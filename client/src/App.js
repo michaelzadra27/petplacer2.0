@@ -66,7 +66,7 @@ function App() {
 
   <Switch>
     <Route exact path="/">
-      <LinkAccts />
+      <Navbar2 />
     </Route>
     <Route exact path="/login">
       <Login />
@@ -85,6 +85,9 @@ function App() {
     </Route>
     <Route exact path="/myMatches">
       <MyMatches />
+    </Route>
+    <Route exact path="/linkaccts">
+      <LinkAccts />
     </Route>
   </Switch>
   <Footer />
