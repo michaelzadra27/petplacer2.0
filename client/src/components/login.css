@@ -38,7 +38,8 @@ label{
 input {
     padding: 5px;
     margin-bottom: 15px;
-    border-radius: 3px;
+    padding-left: 10px;
+    border-radius: 25px;
     box-shadow: 5px 10px 10px grey;
 }
 .login-button {
