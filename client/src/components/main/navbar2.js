@@ -3,22 +3,14 @@ import "./navbar2.css";
 import { DropdownButton, ButtonGroup, Dropdown } from 'react-bootstrap';
 
 
-
 const key = "3m8nwrVMxrsMJ4n6XvooyVdxjqVRqKMLiiIrR036M3ynyptSbR"
 const secret = "vT3chXJ3ddzDrpStykKDftVGJ55X1nCGDXPOJJNN"
-const dogID = []
 
 const selections = {};
 
 var apiData = []
 var dogs = apiData[0]
 
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> dd7686bf351da4fffbd237f8f97584e9cc228999
 const Navbar2 = () => {
 
     function getData() {
@@ -103,8 +95,8 @@ const Navbar2 = () => {
     const [dogSex, setSex] = useState('Sex');
     const [dogLocation, setLocation] = useState('Location');
 
-    const [dogName, setName] = useState();
-    const [dogImage, setImage] = useState()
+    const [dogName, setName] = useState('Dog Name');
+    const [dogImage, setImage] = useState('')
 
     //Function handlers for the different dropdowns to get selected values into object
     const handleBreed = (e) => {
@@ -229,7 +221,7 @@ const Navbar2 = () => {
                 <div className="card">
                     <h2>Pet Matches Go Here</h2>
                     <p className="petName">{dogName}</p>
-                    <img src={dogImage} className="petMatchImg" />
+                    <img src={dogImage} className="petMatchImg"/>
 
                 </div>
                 <div className="selectionBtns">
