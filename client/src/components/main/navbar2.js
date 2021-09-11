@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import "./navbar2.css";
 import { DropdownButton, ButtonGroup, Dropdown } from 'react-bootstrap';
 import { Link } from "react-router-dom";
+import { Icon } from '@iconify/react';
 
 
 const key = "3m8nwrVMxrsMJ4n6XvooyVdxjqVRqKMLiiIrR036M3ynyptSbR"
@@ -240,8 +241,8 @@ const Navbar2 = () => {
                     <img src={dogImage} className="petMatchImg"/>
                 </div>
                 <div className="selectionBtns">
-                    <button className="no-button" onClick={CycleCards}>Boo</button>
-                    <button className="yes-button" onClick={CycleCards}>Yay</button>
+                    <button className="no-button" onClick={CycleCards}><Icon icon="fa:paw" rotate={2} /></button>
+                    <button className="yes-button" onClick={CycleCards}><Icon icon="fa:paw" /></button>
                 </div>
 
             </div>
