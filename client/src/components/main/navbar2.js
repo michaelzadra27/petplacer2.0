@@ -3,6 +3,7 @@ import "./navbar2.css";
 import { DropdownButton, ButtonGroup, Dropdown } from 'react-bootstrap';
 
 
+
 const key = "3m8nwrVMxrsMJ4n6XvooyVdxjqVRqKMLiiIrR036M3ynyptSbR"
 const secret = "vT3chXJ3ddzDrpStykKDftVGJ55X1nCGDXPOJJNN"
 const dogID = []
@@ -91,6 +92,7 @@ const Navbar2 = () => {
     console.log(dogPhotoApi)
     console.log(dogIdApi)
     setName(dogNameApi) 
+    setImage(dogPhotoApi)
    }
 
     //Setting up State to update NavBar with selections
@@ -98,7 +100,7 @@ const Navbar2 = () => {
     const [dogSex, setSex] = useState('Sex');
     const [dogLocation, setLocation] = useState('Location');
 
-    const [dogName, setName] = useState('Dog Name');
+    const [dogName, setName] = useState();
     const [dogImage, setImage] = useState()
 
     //Function handlers for the different dropdowns to get selected values into object
@@ -224,7 +226,7 @@ const Navbar2 = () => {
                 <div className="card">
                     <h2>Pet Matches Go Here</h2>
                     <p className="petName">{dogName}</p>
-                    <img src={dogImage} alt="dog" className="petImagedsss"/>
+                    <img src={dogImage} className="petMatchImg" />
 
                 </div>
                 <div className="selectionBtns">
