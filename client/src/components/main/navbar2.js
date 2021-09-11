@@ -225,7 +225,7 @@ const Navbar2 = () => {
                     </div>
                 </div>
                 <div className="linkAccounts">
-                    <p className="linkActs"><Link to = "/mymatches" style={{ textDecoration: 'none', color: "white" }}>Link Accounts</Link></p>
+                    <p className="linkActs"><Link to = "/linkaccts" style={{ textDecoration: 'none', color: "white" }}>Link Accounts</Link></p>
                 </div>
                 <div className="searchButton">
                     <button className="search-button"  onClick={getData}>Search</button>
