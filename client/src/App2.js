@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 //import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
-import Login from './components/login';
+//import Login from './components/login';
 import Signup from './components/signup';
 import Navbar from './components/main/navbar';
 import Footer from './components/main/footer';
