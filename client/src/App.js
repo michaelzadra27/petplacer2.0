@@ -86,6 +86,9 @@ function App() {
     <Route exact path="/linkaccts">
       <LinkAccts />
     </Route>
+    <Route path="*">
+      <Navbar2 />
+    </Route>
   </Switch>
   <Footer />
 </Router>
