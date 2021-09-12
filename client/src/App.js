@@ -83,9 +83,9 @@ function App() {
     <Route exact path="/myMatches">
       <MyMatches />
     </Route>
-    {/* <Route exact path="/linkaccts">
+    <Route exact path="/linkaccts">
       <LinkAccts />
-    </Route> */}
+    </Route>
   </Switch>
   <Footer />
 </Router>
