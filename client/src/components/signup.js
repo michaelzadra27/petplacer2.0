@@ -1,7 +1,7 @@
 import "./signup.css";
 
 import { useState } from 'react'
-import { useMutation } from '@apollo/client'
+import { useMutation } from '@apollo/react-hooks'
 import { SIGN_UP } from "../utils/mutations"
 
 const Signup = () => {
@@ -19,6 +19,9 @@ const Signup = () => {
         console.log(formData)
         const newUser = await addUser({ variables: {...formData}})
         console.log(newUser)
+        if (newUser){
+            
+        }
     }
 
 
