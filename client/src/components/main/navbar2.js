@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 import "./navbar2.css";
 import { DropdownButton, ButtonGroup, Dropdown } from 'react-bootstrap';
 import { Link } from "react-router-dom";
+
+import { Icon } from '@iconify/react';
+
 import { useMutation } from '@apollo/client';
 //import { LIKE } from "../utils/mutations";
+
 
 
 const key = "3m8nwrVMxrsMJ4n6XvooyVdxjqVRqKMLiiIrR036M3ynyptSbR"
@@ -257,7 +261,9 @@ const Navbar2 = () => {
                     </div>
                 </div>
                 <div className="linkAccounts">
-                    <p className="linkActs"><Link to="/linkaccts" style={{ textDecoration: 'none', color: "white" }}>Link Accounts</Link></p>
+
+                    <p className="linkActs"><Link to = "/linkaccts" style={{ textDecoration: 'none', color: "white" }}>Link Groups</Link></p>
+
                 </div>
                 <div className="searchButton">
                     <button className="search-button" onClick={getData}>Search</button>
@@ -272,8 +278,10 @@ const Navbar2 = () => {
                     <img src={dogImage} className="petMatchImg" />
                 </div>
                 <div className="selectionBtns">
-                    <button className="no-button" onClick={CycleNext}>Boo</button>
-                    <button className="yes-button" onClick={CycleLike}>Yay</button>
+
+                    <button className="no-button" onClick={CycleNext}><Icon icon="fa:paw" rotate={2} /></button>
+                    <button className="yes-button" onClick={CycleLike}><Icon icon="fa:paw" /></button>
+
                 </div>
 
             </div>
