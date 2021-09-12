@@ -3,11 +3,13 @@ import "./signup.css";
 import { useState } from 'react'
 import { useMutation } from '@apollo/react-hooks'
 import { SIGN_UP } from "../utils/mutations"
+import { useHistory } from "react-router-dom"
 
 const Signup = () => {
 
     const [ formData , setFormData ] = useState({email: '', password: ''})
     const [addUser] = useMutation(SIGN_UP)
+    const history = useHistory();
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -20,7 +22,8 @@ const Signup = () => {
         const newUser = await addUser({ variables: {...formData}})
         console.log(newUser)
         if (newUser){
-            
+            history.push('/')
+
         }
     }
 
