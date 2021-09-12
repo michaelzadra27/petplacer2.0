@@ -14,7 +14,9 @@ const likeSchema = new Schema({
   },
   dog_ID: {
     type: Number,
-  }
+  },
+  
+
 });
 
 const Like = mongoose.model("Like", likeSchema);
