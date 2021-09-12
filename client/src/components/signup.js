@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { useMutation } from '@apollo/react-hooks'
 import { SIGN_UP } from "../utils/mutations"
 import { useHistory } from "react-router-dom"
+import { Link } from "react-router-dom";
+
 
 const Signup = () => {
 
@@ -22,7 +24,7 @@ const Signup = () => {
         const newUser = await addUser({ variables: {...formData}})
         console.log(newUser)
         if (newUser){
-            history.push('/')
+            history.push('/navbar2')
 
         }
     }
@@ -51,6 +53,9 @@ const Signup = () => {
                 />
                 <button className="create-account-button">Create Account</button>        
                 </form>
+                <div className="loginLink">
+                    <p>Already a member? Login<Link to = "/login" style={{ marginLeft: '.3rem' }}>{` `}Here</Link></p>
+                </div>
             </div>
         </div>
       );
