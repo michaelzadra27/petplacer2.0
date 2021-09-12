@@ -39,7 +39,7 @@ import LinkAccts from './components/main/linkAccts';
 //   };
 // });
 
-
+console.log(process.env)
 const client = new ApolloClient({
   request: (operation) => {
     const token = localStorage.getItem('id_token');
@@ -56,7 +56,7 @@ const client = new ApolloClient({
 
 function App() {
   return (
-   
+    
 
 <ApolloProvider client={client}>
 
@@ -66,19 +66,16 @@ function App() {
 
   <Switch>
     <Route exact path="/">
-      <LinkAccts />
+    <Navbar2 />
     </Route>
     <Route exact path="/login">
       <Login />
-      {/* <Matchup /> */}
     </Route>
     <Route exact path="/signup">
       <Signup />
-      {/* <Vote /> */}
     </Route>
     <Route exact path="/home">
       <Home />
-      {/* <NotFound /> */}
     </Route>
     <Route exact path="/myLikes">
       <MyLikes />
@@ -86,13 +83,11 @@ function App() {
     <Route exact path="/myMatches">
       <MyMatches />
     </Route>
-    <Route exact path="/linkaccts">
+    {/* <Route exact path="/linkaccts">
       <LinkAccts />
-    </Route>
+    </Route> */}
   </Switch>
   <Footer />
-
-  {/* </div> */}
 </Router>
 </ApolloProvider>
   );

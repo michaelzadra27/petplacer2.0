@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useMutation } from '@apollo/client';
+import { useMutation } from '@apollo/react-hooks';
 import { LOGIN_USER } from "../utils/mutations";
 import Auth from '../utils/auth';
 import "./login.css";
@@ -31,10 +31,10 @@ const LoginForm = async () => {
     // }
 
 
-    setUserFormData({
-        username: '',
-        password: ''
-    })
+    // setUserFormData({
+    //     username: '',
+    //     password: ''
+    // })
 
     return (
         <div className="loginForm">
