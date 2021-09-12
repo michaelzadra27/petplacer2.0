@@ -70,15 +70,12 @@ function App() {
     </Route>
     <Route exact path="/login">
       <Login />
-      {/* <Matchup /> */}
     </Route>
     <Route exact path="/signup">
       <Signup />
-      {/* <Vote /> */}
     </Route>
     <Route exact path="/home">
       <Home />
-      {/* <NotFound /> */}
     </Route>
     <Route exact path="/myLikes">
       <MyLikes />
