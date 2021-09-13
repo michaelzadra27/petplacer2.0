@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import "./navbar2.css";
-import { DropdownButton, ButtonGroup, Dropdown } from 'react-bootstrap';
+import { DropdownButton, ButtonGroup, Dropdown, Modal, Button } from 'react-bootstrap';
 import { Link } from "react-router-dom";
+
+import { Icon } from '@iconify/react';
+
+import { useMutation } from '@apollo/client';
+//import { LIKE } from "../utils/mutations";
+
 
 
 const key = "3m8nwrVMxrsMJ4n6XvooyVdxjqVRqKMLiiIrR036M3ynyptSbR"
@@ -11,6 +17,7 @@ const selections = {};
 
 var apiData = []
 var dogs = apiData[0]
+
 
 const Navbar2 = () => {
 
@@ -62,20 +69,20 @@ const Navbar2 = () => {
                         return response.json();
                     })
                     .then(function ({ animals }) {
-                        
-                        if (selections.sex === undefined && selections.breed === undefined && selections.location === undefined){
+
+                        if (selections.sex === undefined && selections.breed === undefined && selections.location === undefined) {
                             alert("Please select a Breed, Sex, and Location before searching")
                             return
-                           }
-                        if (selections.sex === undefined){
+                        }
+                        if (selections.sex === undefined) {
                             alert("Please select Sex")
                             return
                         }
-                        if (selections.breed === undefined){
+                        if (selections.breed === undefined) {
                             alert("Please select Breed")
                             return
                         }
-                        if (selections.location === undefined){
+                        if (selections.location === undefined) {
                             alert("Please select Location")
                             return
                         }
@@ -85,27 +92,14 @@ const Navbar2 = () => {
                         //var dogs = apiData[0];
                         //var start = Math.floor(Math.random() * dogs.length)
                         RenderFirst()
-                        
+
                     })
-    
+
             };
         };
     }
-    
-   const RenderFirst = () => {
-       
-    var dogs = apiData[0];
-    //Randomly start at one of the dogs returned
-    var start = Math.floor(Math.random() * dogs.length)
-    var dogIdApi = dogs[start].id
-    var dogPhotoApi = dogs[start].photos[0].large
-    var dogNameApi = dogs[start].name
-    console.log(dogs[0])
-    console.log(dogPhotoApi)
-    console.log(dogIdApi)
-    setName(dogNameApi) 
-    setImage(dogPhotoApi)
-   }
+
+
 
     //Setting up State to update NavBar with selections
     const [dogBreed, setBreed] = useState('Breed');
@@ -114,6 +108,10 @@ const Navbar2 = () => {
 
     const [dogName, setName] = useState('Dog Name');
     const [dogImage, setImage] = useState('')
+    const [description, setDescription] = useState('')
+
+
+    //const [login] = useMutation(LIKE)
 
     //Function handlers for the different dropdowns to get selected values into object
     const handleBreed = (e) => {
@@ -136,23 +134,95 @@ const Navbar2 = () => {
         setLocation(e);
     };
 
+    const RenderFirst = () => {
+        var dogs = apiData[0];
+        for (let i = 0; i < dogs.length; i++) {
+            if (dogs[i].photos.length === 0) {
+                dogs.splice(i, 1)
+                return
+            } else {
+                //Randomly start at one of the dogs returned
+                var start = Math.floor(Math.random() * dogs.length)
+                var dogIdApi = dogs[start].id
+                var dogPhotoApi = dogs[start].photos[0].large
+                var dogNameApi = dogs[start].name
+                var dogDescription = dogs[start].description
 
-
-    const CycleCards = () => {
-    var dogs = apiData[0];
-    console.log(dogs.length)
-    //Randomly start at one of the dogs returned
-    var i = Math.floor(Math.random() * dogs.length)
-    var dogIdApi = dogs[i].id
-    var dogPhotoApi = dogs[i].photos[0].large
-    var dogNameApi = dogs[i].name
-
-    
-    setImage(dogPhotoApi)
-    setName(dogNameApi)
-    
-    
+                setDescription(dogDescription)
+                setName(dogNameApi)
+                setImage(dogPhotoApi)
+            }
+        }
     }
+
+
+    const CycleNext = () => {
+        var dogs = apiData[0];
+        //Remove any dogs without pictures from Array
+        const removeBadBoys = () => {
+            
+            for (let i = 0; i < dogs.length; i++) {
+                console.log(dogs[i].name)
+                if (dogs[i].photos.length === 0) {
+                    dogs.splice(i, 1)
+
+                }
+            }
+        }
+        removeBadBoys();
+                var x = Math.floor(Math.random() * dogs.length)
+                var dogIdApi = dogs[x].id
+                var dogPhotoApi = dogs[x].photos[0].large
+                var dogNameApi = dogs[x].name
+                var dogDescription = dogs[x].description
+
+                setDescription(dogDescription)
+                setImage(dogPhotoApi)
+                setName(dogNameApi)
+
+
+            }
+    
+    const CycleLike = (event) => {
+        var dogs = apiData[0];
+        //Remove any dogs without pictures from Array
+        const removeBadBoys = () => {
+            
+            for (let i = 0; i < dogs.length; i++) {
+                console.log(dogs[i].url)
+                if (dogs[i].photos.length === 0) {
+                    dogs.splice(i, 1)
+
+                }
+            }
+        }
+        removeBadBoys();
+        
+       
+                //Get Random dog and render information to card
+                var x = Math.floor(Math.random() * dogs.length)
+                var dogIdApi = dogs[x].id
+                var dogPhotoApi = dogs[x].photos[0].large
+                var dogNameApi = dogs[x].name
+                var contactCity = dogs[x].contact.address.city
+                var contactEmail = dogs[x].contact.email
+                var dogDescription = dogs[x].description
+                var dogURL = dogs[x].url
+
+                //Send Info To Database
+                console.log(dogs)
+                console.log(dogIdApi)
+                console.log(dogNameApi)
+                console.log(contactCity)
+                console.log(contactEmail)
+
+
+                setDescription(dogDescription)
+                setImage(dogPhotoApi)
+                setName(dogNameApi)
+            }
+     
+
 
 
     return (
@@ -225,23 +295,28 @@ const Navbar2 = () => {
                     </div>
                 </div>
                 <div className="linkAccounts">
-                    <p className="linkActs"><Link to = "/linkaccts" style={{ textDecoration: 'none', color: "white" }}>Link Accounts</Link></p>
+
+                    <p className="linkActs"><Link to="/signup" style={{ textDecoration: 'none', color: "white" }}>Link Groups</Link></p>
+
                 </div>
                 <div className="searchButton">
-                    <button className="search-button"  onClick={getData}>Search</button>
+                    <button className="search-button" onClick={getData}>Search</button>
                 </div>
             </div>
 
             {/* Pet Display Cards */}
             <div className="petDisplay">
-            
+
                 <div className="card">
-                <p className="petName">{dogName}</p>
-                    <img src={dogImage} className="petMatchImg"/>
+                    <p className="petName">{dogName}</p>
+                    <img src={dogImage} className="petMatchImg" />
+                    <p>{description}</p>
                 </div>
                 <div className="selectionBtns">
-                    <button className="no-button" onClick={CycleCards}>Boo</button>
-                    <button className="yes-button" onClick={CycleCards}>Yay</button>
+
+                    <button className="no-button" onClick={CycleNext}><Icon icon="fa:paw" rotate={2} /></button>
+                    <button className="yes-button" onClick={CycleLike}><Icon icon="fa:paw" /></button>
+
                 </div>
 
             </div>

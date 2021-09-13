@@ -14,7 +14,20 @@ const likeSchema = new Schema({
   },
   dog_ID: {
     type: Number,
-  }
+  },
+  dogName: {
+    type: String,
+  },
+  contactCity: {
+    type: String,
+  },
+  contactEmail: {
+    type: String,
+  },
+  dogURL: {
+    type: String,
+  },
+
 });
 
 const Like = mongoose.model("Like", likeSchema);

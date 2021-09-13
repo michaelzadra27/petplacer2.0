@@ -6,6 +6,8 @@ const cors = require('cors')
 const { typeDefs, resolvers } = require('./schemas');
 //const routes = require('./routes');
 const { authMiddleware } = require('./utils/auth');
+require('dotenv').config();
+
 
 const app = express();
 const PORT = process.env.PORT || 3001;

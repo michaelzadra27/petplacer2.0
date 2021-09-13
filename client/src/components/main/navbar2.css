@@ -123,11 +123,12 @@ align-items: center;
 
 }
 .card{
-  display:flex;
+display:flex;
+flex-direction: column;
 padding: 30px;
 margin: 30px;
 height: 400px;
-width: 500px;
+/* width: 500px; */
 border-radius: 45px;
 box-shadow: 5px 10px 10px grey;
 justify-content: center;
@@ -137,8 +138,9 @@ justify-content: center;
 .petName{
   display: flex;
   justify-content: center;
-  font-size: 24px;
+  font-size: 32px;
   text-decoration: none;
+  margin-bottom:20px
 }
 
 
@@ -147,11 +149,11 @@ justify-content: center;
   justify-self: center;
   align-items: center;
   overflow: hidden;
-  /* min-width: 100%;
-  min-height: 100% */
   height: 350px;
   object-fit: contain;
   justify-content: center;
+  border-radius: 45px;
+  background: linear-gradient(45deg, #FF6A5B, #FD2B7A);
 
 }
 
@@ -161,8 +163,11 @@ justify-content: center;
   margin-bottom: 40px;
 }
 .no-button {
+display: flex;
+justify-content: center;
+align-items: center;
 width: 200px;
-height: 70px;
+height: 60px;
 font-size: 32px;
 margin-top: 20px;
 margin-right: 40px;
@@ -171,8 +176,11 @@ background: linear-gradient(45deg, #FF6A5B, #FD2B7A);
 box-shadow: 5px 10px 10px grey;
 }
 .yes-button {
+display: flex;
+justify-content: center;
+align-items: center;
 width: 200px;
-height: 70px;
+height: 60px;
 font-size: 32px;
 margin-top: 20px;
 margin-left: 40px;
