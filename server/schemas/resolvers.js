@@ -75,8 +75,14 @@ const resolvers = {
         like: async (parent, { email, groupName, dog_ID }, context) => {
             // if(context.user){
             return await Like.create({userEmail: email, groupName: groupName, dog_ID: dog_ID })
-            // } else {
-            //     throw new AuthenticationError('You need to be logged in to like a pet')
+            // function toFindDuplicates(arry) {
+            //     let sorted = arry.sort()
+            //     for(i=0; i<arry.length; i++){
+            //         if(arry[i] === arry[i+1]){
+            //             sorted.splice(i,1)
+            //         }
+            //     }
+            //     return sorted
             // }
         },
 

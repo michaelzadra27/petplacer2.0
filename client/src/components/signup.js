@@ -1,7 +1,7 @@
 import "./signup.css";
 
 import { useState } from 'react'
-import { useMutation } from '@apollo/client'
+import { useMutation } from '@apollo/react-hooks'
 import { SIGN_UP } from "../utils/mutations"
 
 const Signup = () => {
