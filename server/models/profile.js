@@ -13,6 +13,10 @@ const profileSchema = new Schema({
   password: {
     type: String,
     required: "Password of type string required for user"
+  },
+  groupName:{
+    type: String,
+    default: "none"
   }
 });
 
