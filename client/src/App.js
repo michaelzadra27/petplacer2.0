@@ -67,11 +67,11 @@ function App() {
 
   <Switch>
     <Route exact path="/">
-    <Navbar2 />
+    <Signup />
     </Route>
-    {/* <Route exact path="/navbar2">
+    <Route exact path="/navbar2">
       <Navbar2 />
-    </Route> */}
+    </Route>
     <Route exact path="/login">
       <Login />
     </Route>
