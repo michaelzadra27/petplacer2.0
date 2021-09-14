@@ -4,6 +4,7 @@ import {LOGIN_USER} from '../utils/mutations'
 import { useMutation } from '@apollo/react-hooks'
 import Auth from '../utils/auth'
 import "./login.css";
+import { Link } from "react-router-dom";
 
 const Login = () => {
     const [formState, setFormState] = useState('')
@@ -44,8 +45,9 @@ const Login = () => {
                         required
                     />
                     <button className="login-button">Log In</button>
-                    <button className="signup-button">Not a Member? Sign Up Here</button>
+                
                 </form>
+                <button className="signup-button"><Link to = "/signup" style={{ textDecoration: 'none', color: "white"}}>Not a Member? Sign Up Here</Link></button>
             </div>
         </div >
     )
