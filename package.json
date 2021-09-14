@@ -20,6 +20,8 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "graphql": "^15.5.1",
+    "jwt-decode": "^3.1.2",
+    "mongoose": "^6.0.3",
     "nodemon": "^2.0.12"
   }
 }
