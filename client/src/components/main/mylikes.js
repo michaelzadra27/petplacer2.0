@@ -1,4 +1,5 @@
 import "./mylikes.css"
+import Logo from "../../../src/petplacer2.png"
 
 const MyLikes = () => {
     return ( 
@@ -6,8 +7,10 @@ const MyLikes = () => {
         <div className="likeCard">
         <h4>My Likes</h4>
         <div className="likedPets">
-            <div className="smallLikeCard"></div>
-            <p className="likedInfo">Liked Pet Info</p>
+            <div>
+            <img className="smallLikeCard" src={Logo} alt="Pet Placer Logo"></img>
+            </div>
+            <p className="likedInfo">"dogName" dynamic input - LIKES</p>
         </div>
     </div>
     <div className="selections">

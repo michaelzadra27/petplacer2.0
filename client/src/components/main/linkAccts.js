@@ -37,6 +37,7 @@ const LinkAccts = () => {
     return (
         <div className="findAccts">
             <div className="linkCard">
+
                 <h4 className="title">Join a Group</h4>
                 <div className="acctForm">
                     <form className="linkForm" onSubmit={searchForGroup}>
@@ -74,6 +75,7 @@ const LinkAccts = () => {
                 <div className="closeBtnDiv">
                     <button className="closeLinkBtn">Close</button>
                 </div>
+
             </div>
 
         </div>

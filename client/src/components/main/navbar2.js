@@ -351,7 +351,7 @@ const Navbar2 = () => {
                 <div className="card">
                     <p className="petName">{dogName}</p>
                     <img src={dogPhotoApi} className="petMatchImg" />
-                    <p>{description}</p>
+                    <p className="desc">{description}</p>
                 </div>
                 <div className="selectionBtns">
 

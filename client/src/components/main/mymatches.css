@@ -27,11 +27,15 @@ h4 {
 }
 
 .smallMatchCard{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    overflow: hidden;
+    object-fit: contain;
+    justify-content: center;
     height: 50px;
-    width: 50px;
-    background-color: lightcoral;
+    
     border-radius: 10px;
-    margin-left: 15px;
     box-shadow: 5px 10px 10px grey;
 }
 
