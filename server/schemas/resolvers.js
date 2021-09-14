@@ -52,13 +52,17 @@ const resolvers = {
             const token = signToken(profile)
             return { token, profile }
         },
-        createGroup: async (parent, { groupName, email }, context) => {
+        createGroup: async (parent, { groupName }, context) => {
             // if(context.user){
-                const userProfile = await Profile.findOne({email: email})
-                return await Group.create({ groupName: groupName, profiles: [userProfile] })
-            // } else {
-            //     throw new AuthenticationError('You need to be logged in to create a group')
-            // }
+                
+                const userProfile = await Profile.findOneAndUpdate({email: context.user.email}, {groupName: groupName})
+                
+                const updated = await Profile.findOne({email: context.user.email})
+                const token = signToken(updated)
+                
+                const newGroup = await Group.create({ groupName: groupName, profiles: [updated] })
+                console.log(token)
+                return { token }
         },
         joinGroup: async (parent, { groupName, email }, context) => {
             // if(context.user){
@@ -70,8 +74,8 @@ const resolvers = {
             // }
         },
         like: async (parent, {dogPhotoApi, email, groupName, dog_ID, dogName, contactCity, contactEmail, dogURL }, context) => {
-            // console.log(context)
-            return await Like.create({dogPhotoApi: dogPhotoApi, email: email, groupName: groupName, dog_ID: dog_ID, dogName: dogName, contactCity: contactCity, contactEmail: contactEmail, dogURL: dogURL})
+            console.log(context.user)
+            return await Like.create({dogPhotoApi: dogPhotoApi, email: context.user.email, groupName: context.user.groupName, dog_ID: dog_ID, dogName: dogName, contactCity: contactCity, contactEmail: contactEmail, dogURL: dogURL})
             // } else {
             //     throw new AuthenticationError('You need to be logged in to like a pet')
             // }
