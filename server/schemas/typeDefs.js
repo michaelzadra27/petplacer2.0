@@ -22,6 +22,7 @@ const typeDefs = gql`
         contactCity: String
         contactEmail: String
         dogURL: String
+        dogPhotoApi: String
     }
 
     type Auth {
@@ -40,7 +41,7 @@ const typeDefs = gql`
     type Mutation {
         signUp(email: String!, password: String!): Auth
         login(email: String!, password: String!): Auth
-        createGroup(groupName: String!, email: String!): Group
+        createGroup(groupName: String!): Auth
         joinGroup(groupName: String!, email: String!): Group
         like(dogPhotoApi: String, email: String, groupName: String, dog_ID: ID, dogName: String, contactCity: String, contactEmail: String, dogURL: String): like
     }
