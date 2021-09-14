@@ -5,10 +5,12 @@ import { useMutation } from '@apollo/react-hooks'
 import Auth from '../utils/auth'
 import "./login.css";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom"
 
 const Login = () => {
     const [formState, setFormState] = useState('')
     const [login] = useMutation(LOGIN_USER)
+    const history = useHistory();
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -18,7 +20,8 @@ const Login = () => {
     const handleLogin = async (event) => {
         event.preventDefault()
         const { data } = await login({variables: {...formState}})
-        Auth.login(data.login.token)
+        Auth.login(data.login.token);
+        history.push('/navbar2')
     }
 
     return (
