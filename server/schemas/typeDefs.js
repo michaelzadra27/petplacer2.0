@@ -22,6 +22,7 @@ const typeDefs = gql`
         contactCity: String
         contactEmail: String
         dogURL: String
+        dogPhotoApi: String
     }
 
     type Auth {

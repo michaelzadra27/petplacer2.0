@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import { Icon } from '@iconify/react';
 
-import { useMutation } from '@apollo/client';
+import { useMutation } from '@apollo/react-hooks';
 import { LIKE } from '../../utils/mutations'
 //import { LIKE } from "../utils/mutations";
 
@@ -243,7 +243,7 @@ const Navbar2 = () => {
 
                 //Send Info To Database
 
-
+                
                 setDescription(dogDescription)
                 setPhotoApi(dogPhoto)
                 setName(dogNameApi)
@@ -328,7 +328,9 @@ const Navbar2 = () => {
                 </div>
                 <div className="linkAccounts">
 
-                    <p className="linkaccts"><Link to="/linkaccts" style={{ textDecoration: 'none', color: "white" }}>Link Groups</Link></p>
+
+
+                    <p className="linkActs"><Link to="/linkaccts" style={{ textDecoration: 'none', color: "white" }}>Link Groups</Link></p>
 
                 </div>
                 <div className="searchButton">
