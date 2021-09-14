@@ -328,7 +328,7 @@ const Navbar2 = () => {
                 </div>
                 <div className="linkAccounts">
 
-                    <p className="linkActs"><Link to="/signup" style={{ textDecoration: 'none', color: "white" }}>Link Groups</Link></p>
+                    <p className="linkaccts"><Link to="/linkaccts" style={{ textDecoration: 'none', color: "white" }}>Link Groups</Link></p>
 
                 </div>
                 <div className="searchButton">
