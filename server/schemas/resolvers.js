@@ -7,8 +7,8 @@ const resolvers = {
         profiles: async ()=> {
             return await Profile.find()
         },
-        findGroup: async (parent, { name }) => {
-            return await Group.findOne({groupName: name})
+        findGroup: async (parent, { groupName }) => {
+            return await Group.findOne({groupName: groupName})
         },
         me: async (parent, args, context) => {
             console.log(context.user)
@@ -64,9 +64,11 @@ const resolvers = {
                 console.log(token)
                 return { token }
         },
-        joinGroup: async (parent, { groupName, email }, context) => {
+        joinGroup: async (parent, { groupName }, context) => {
             // if(context.user){
-                const joinedUser = await  Profile.findOneAndUpdate({ email: email }, { group: groupName })
+                console.log(groupName)
+                const joinedUser = await Profile.findOneAndUpdate({email: context.user.email}, {groupName: groupName})
+                console.log(joinedUser)
                 const joinedGroup = await Group.findOneAndUpdate({ groupName: groupName }, {$push: {profiles: joinedUser}})
             return joinedGroup
             // } else {

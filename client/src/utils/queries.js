@@ -10,10 +10,9 @@ export const QUERY_ME = gql`
 `
 
 export const FIND_GROUP = gql`
-    query findGroup($name: String!){
-        findGroup(name: $name){
+    query findGroup($groupName: String!){
+        findGroup(groupName: $groupName){
             groupName
-            profile
         }
     }
 `

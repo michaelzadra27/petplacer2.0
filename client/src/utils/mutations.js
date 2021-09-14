@@ -9,13 +9,10 @@ export const CREATE_GROUP = gql`
 `
 
 export const JOIN_GROUP = gql`
-    mutation joinGroup($groupName:String!, $email: String!){
-        joinGroup(groupName: $groupName, email: $email){
+    mutation joinGroup($groupName:String!){
+        joinGroup(groupName: $groupName){
             _id
             groupName
-            profile{
-                email
-            }
         }
     }
 `
