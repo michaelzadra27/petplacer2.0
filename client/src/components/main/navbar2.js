@@ -216,7 +216,7 @@ const Navbar2 = () => {
                 console.log(contactCity)
                 console.log(contactEmail)
 
-
+                
                 setDescription(dogDescription)
                 setImage(dogPhotoApi)
                 setName(dogNameApi)

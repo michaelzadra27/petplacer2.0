@@ -72,9 +72,9 @@ const resolvers = {
             //     throw new AuthenticationError('You need to be logged in to join a group')
             // }
         },
-        like: async (parent, { email, groupName, dog_ID, dogName, contactCity, contactEmail, dogURL }, context) => {
+        like: async (parent, { email, groupName, dog_ID, dogName, contactCity, contactEmail, dogURL, dogPhotoApi }, context) => {
             // if(context.user){
-            return await Like.create({userEmail: email, groupName: groupName, dog_ID: dog_ID, dogName: dogName, contactCity: contactCity, contactEmail: contactEmail, dogURL: dogURL})
+            return await Like.create({userEmail: email, groupName: groupName, dog_ID: dog_ID, dogName: dogName, contactCity: contactCity, contactEmail: contactEmail, dogURL: dogURL, dogPhotoApi: dogPhotoApi})
             // } else {
             //     throw new AuthenticationError('You need to be logged in to like a pet')
             // }
