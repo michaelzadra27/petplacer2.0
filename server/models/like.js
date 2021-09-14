@@ -5,8 +5,7 @@ const Schema = mongoose.Schema;
 const likeSchema = new Schema({
   email: {
     type: String,
-    unique: true,
-    required: 'like must contain a user id of type string',
+    required: 'like must contain a email of type string',
   },
   groupName: {
     type: String,

@@ -42,7 +42,7 @@ const typeDefs = gql`
         login(email: String!, password: String!): Auth
         createGroup(groupName: String!, email: String!): Group
         joinGroup(groupName: String!, email: String!): Group
-        like(email: String!, groupName: String!, dog_ID: ID!, dogName: String!, contactCity: String!, contactEmail: String!, dogURL: String!): [like]
+        like(dogPhotoApi: String, email: String, groupName: String, dog_ID: ID, dogName: String, contactCity: String, contactEmail: String, dogURL: String): like
     }
 `
 
