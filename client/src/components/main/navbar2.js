@@ -144,11 +144,17 @@ const Navbar2 = () => {
 
     const RenderFirst = () => {
         var dogs = apiData[0];
-        for (let i = 0; i < dogs.length; i++) {
-            if (dogs[i].photos.length === 0) {
-                dogs.splice(i, 1)
-                return
-            } else {
+        const removeBadBoys = () => {
+            
+            for (let i = 0; i < dogs.length; i++) {
+                console.log(dogs[i].name)
+                if (dogs[i].photos.length === 0) {
+                    dogs.splice(i, 1)
+
+                }
+            }
+        }
+        removeBadBoys();
                 //Randomly start at one of the dogs returned
                 var x = Math.floor(Math.random() * dogs.length)
                 var dogId = dogs[x].id
@@ -167,8 +173,8 @@ const Navbar2 = () => {
                         setDogId(dogId)
                         setDogURL(dogUrl)
             }
-        }
-    }
+        
+    
 
 
     const CycleNext = () => {
@@ -267,8 +273,8 @@ const Navbar2 = () => {
                         key={"Breed"}
                         // id={`dropdown-variants-${variant}`}
                         title={"Breed"}
-                        onSelect={handleBreed}
-                    >
+                        onSelect={handleBreed}>
+                     {/* <div style = {{height: "300px", overflowY:"auto"}}> */}
                         <Dropdown.Item eventKey="Beagle">Beagle</Dropdown.Item>
                         <Dropdown.Item eventKey="Border Collie">Border Collie</Dropdown.Item>
                         <Dropdown.Item eventKey="Boxer">Boxer</Dropdown.Item>
@@ -279,6 +285,7 @@ const Navbar2 = () => {
                         <Dropdown.Item eventKey="Pug">Pug</Dropdown.Item>
                         <Dropdown.Item eventKey="Rottweiler">Rottweiler</Dropdown.Item>
                         <Dropdown.Item eventKey="Yorkshire Terrier">Yorkshire Terrier</Dropdown.Item>
+                        {/* </div> */}
                     </DropdownButton>
 
                     <DropdownButton
@@ -344,7 +351,7 @@ const Navbar2 = () => {
                 <div className="card">
                     <p className="petName">{dogName}</p>
                     <img src={dogPhotoApi} className="petMatchImg" />
-                    <p>{description}</p>
+                    <p className="desc">{description}</p>
                 </div>
                 <div className="selectionBtns">
 
