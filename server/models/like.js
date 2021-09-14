@@ -5,8 +5,7 @@ const Schema = mongoose.Schema;
 const likeSchema = new Schema({
   email: {
     type: String,
-    unique: true,
-    required: 'like must contain a user id of type string',
+    required: 'like must contain a email of type string',
   },
   groupName: {
     type: String,
@@ -14,7 +13,20 @@ const likeSchema = new Schema({
   },
   dog_ID: {
     type: Number,
-  }
+  },
+  dogName: {
+    type: String,
+  },
+  contactCity: {
+    type: String,
+  },
+  contactEmail: {
+    type: String,
+  },
+  dogURL: {
+    type: String,
+  },
+
 });
 
 const Like = mongoose.model("Like", likeSchema);

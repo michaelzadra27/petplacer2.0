@@ -33,15 +33,15 @@ const resolvers = {
 
     Mutation: {
         signUp: async (parent, args) => {
-            console.log("sign up")
-            console.log(args)
             const profile = await Profile.create(args)
             const token = signToken(profile)
             return { token, profile }
         },
         login: async (parent, { email, password }) => {
+            console.log('+++++++++++++++++++++++++++++++++++++++++++++')
+            console.log(email)
             const profile = await Profile.findOne({ email })
-
+            console.log(profile)
             if(!profile){
                 throw new AuthenticationError('No user found with that email')
             }
@@ -53,6 +53,7 @@ const resolvers = {
             }
 
             const token = signToken(profile)
+            console.log(token)
             return { token, profile }
         },
         createGroup: async (parent, { groupName, email }, context) => {
@@ -72,9 +73,9 @@ const resolvers = {
             //     throw new AuthenticationError('You need to be logged in to join a group')
             // }
         },
-        like: async (parent, { email, groupName, dog_ID }, context) => {
-            // if(context.user){
-            return await Like.create({userEmail: email, groupName: groupName, dog_ID: dog_ID })
+        like: async (parent, {dogPhotoApi, email, groupName, dog_ID, dogName, contactCity, contactEmail, dogURL }, context) => {
+            console.log(email)
+            return await Like.create({dogPhotoApi: dogPhotoApi, email: email, groupName: groupName, dog_ID: dog_ID, dogName: dogName, contactCity: contactCity, contactEmail: contactEmail, dogURL: dogURL})
             // } else {
             //     throw new AuthenticationError('You need to be logged in to like a pet')
             // }

@@ -39,7 +39,7 @@ import LinkAccts from './components/main/linkAccts';
 //   };
 // });
 
-
+console.log(process.env)
 const client = new ApolloClient({
   request: (operation) => {
     const token = localStorage.getItem('id_token');
@@ -53,10 +53,10 @@ const client = new ApolloClient({
   uri: 'http://localhost:3001/graphql',
   cache: new InMemoryCache(),
 });
-
+console.log(process.env)
 function App() {
   return (
-   
+    
 
 <ApolloProvider client={client}>
 
@@ -66,19 +66,19 @@ function App() {
 
   <Switch>
     <Route exact path="/">
-      <Signup />
+    <Navbar2 />
     </Route>
+    {/* <Route exact path="/navbar2">
+      <Navbar2 />
+    </Route> */}
     <Route exact path="/login">
-      <MyLikes />
-      {/* <Matchup /> */}
+      <Login />
     </Route>
     <Route exact path="/signup">
       <Signup />
-      {/* <Vote /> */}
     </Route>
     <Route exact path="/home">
       <Home />
-      {/* <NotFound /> */}
     </Route>
     <Route exact path="/myLikes">
       <MyLikes />
@@ -89,10 +89,11 @@ function App() {
     <Route exact path="/linkaccts">
       <LinkAccts />
     </Route>
+    <Route path="*">
+      <Signup/>
+    </Route>
   </Switch>
   <Footer />
-
-  {/* </div> */}
 </Router>
 </ApolloProvider>
   );

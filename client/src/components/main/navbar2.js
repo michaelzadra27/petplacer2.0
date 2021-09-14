@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import "./navbar2.css";
-import { DropdownButton, ButtonGroup, Dropdown } from 'react-bootstrap';
+import { DropdownButton, ButtonGroup, Dropdown, Modal, Button } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 
 import { Icon } from '@iconify/react';
 
 import { useMutation } from '@apollo/client';
+import { LIKE } from '../../utils/mutations'
 //import { LIKE } from "../utils/mutations";
 
 
@@ -17,6 +18,7 @@ const selections = {};
 
 var apiData = []
 var dogs = apiData[0]
+
 
 const Navbar2 = () => {
 
@@ -106,7 +108,16 @@ const Navbar2 = () => {
     const [dogLocation, setLocation] = useState('Location');
 
     const [dogName, setName] = useState('Dog Name');
-    const [dogImage, setImage] = useState('')
+    const [description, setDescription] = useState('')
+    const [contactCity, setCity] = useState('')
+    const [contactEmail, setEmail] = useState('')
+    const [dogURL, setDogURL] = useState('')
+    const [dogPhotoApi, setPhotoApi] = useState('')
+    const [dogIdApi, setDogId] = useState('')
+
+    const [like] = useMutation(LIKE)
+
+
 
     //const [login] = useMutation(LIKE)
 
@@ -132,62 +143,117 @@ const Navbar2 = () => {
     };
 
     const RenderFirst = () => {
-
         var dogs = apiData[0];
-        //Randomly start at one of the dogs returned
-        var start = Math.floor(Math.random() * dogs.length)
-        var dogIdApi = dogs[start].id
-        var dogPhotoApi = dogs[start].photos[0].large
-        var dogNameApi = dogs[start].name
-        console.log(dogs[0])
-        console.log(dogPhotoApi)
-        console.log(dogIdApi)
-        setName(dogNameApi)
-        setImage(dogPhotoApi)
+        for (let i = 0; i < dogs.length; i++) {
+            if (dogs[i].photos.length === 0) {
+                dogs.splice(i, 1)
+                return
+            } else {
+                //Randomly start at one of the dogs returned
+                var x = Math.floor(Math.random() * dogs.length)
+                var dogId = dogs[x].id
+                var dogPhoto = dogs[x].photos[0].large
+                var dogNameApi = dogs[x].name
+                var City = dogs[x].contact.address.city
+                var Email = dogs[x].contact.email
+                var dogDescription = dogs[x].description
+                var dogUrl = dogs[x].url
+        
+                        setDescription(dogDescription)
+                        setPhotoApi(dogPhoto)
+                        setName(dogNameApi)
+                        setEmail(Email)
+                        setCity(City)
+                        setDogId(dogId)
+                        setDogURL(dogUrl)
+            }
+        }
     }
 
 
     const CycleNext = () => {
         var dogs = apiData[0];
-        console.log(dogs)
-        for(let i = 0; i < dogs.length; i++) {
-            if(dogs[i].photos.length === 0) {
-                dogs.splice(i,1)
-                return
-            } else { 
-       
-        console.log(dogs.length)
-        //Randomly start at one of the dogs returned
+        //Remove any dogs without pictures from Array
+        const removeBadBoys = () => {
+            
+            for (let i = 0; i < dogs.length; i++) {
+                console.log(dogs[i].name)
+                if (dogs[i].photos.length === 0) {
+                    dogs.splice(i, 1)
+
+                }
+            }
+        }
+        removeBadBoys();
         var x = Math.floor(Math.random() * dogs.length)
-        var dogIdApi = dogs[x].id
-        var dogPhotoApi = dogs[x].photos[0].large
+        var dogId = dogs[x].id
+        var dogPhoto = dogs[x].photos[0].large
         var dogNameApi = dogs[x].name
-        setImage(dogPhotoApi)
-        setName(dogNameApi)
+        var City = dogs[x].contact.address.city
+        var Email = dogs[x].contact.email
+        var dogDescription = dogs[x].description
+        var dogUrl = dogs[x].url
+
+                setDescription(dogDescription)
+                setPhotoApi(dogPhoto)
+                setName(dogNameApi)
+                setEmail(Email)
+                setCity(City)
+                setDogId(dogId)
+                setDogURL(dogUrl)
 
 
-    }}}
-
-    const CycleLike = (event) => {
+            }
+    
+    const CycleLike = async (event) => {
         var dogs = apiData[0];
-        for(let i = 0; i < dogs.length; i++) {
-            if(dogs[i].photos.length === 0) {
-                dogs.splice(i,1)
-                return
-            } else { 
+        //Remove any dogs without pictures from Array
+        const removeBadBoys = () => {
+            
+            for (let i = 0; i < dogs.length; i++) {
+                console.log(dogs[i].url)
+                if (dogs[i].photos.length === 0) {
+                    dogs.splice(i, 1)
+
+                }
+            }
+        }
+        removeBadBoys();
+        //_______________________________________________________________________API go here
+        console.log("like")
+        const {data} = await like({variables: {dogName:dogName, dogIdApi:dogIdApi, contactCity:contactCity, contactEmail:contactEmail, dogURL:dogURL, dogPhotoApi:dogPhotoApi, description:description}})
+        // console.log(dogName)
+        // console.log(dogIdApi)
+        // console.log(contactCity)
+        // console.log(contactEmail)
+        // console.log(dogURL)
+        // console.log(dogPhotoApi)
+        // console.log(description)
+        
+                if(data){
+                    console.log("like hit")
+                var x = Math.floor(Math.random() * dogs.length)
+                var dogId = dogs[x].id
+                var dogPhoto = dogs[x].photos[0].large
+                var dogNameApi = dogs[x].name
+                var City = dogs[x].contact.address.city
+                var Email = dogs[x].contact.email
+                var dogDescription = dogs[x].description
+                var dogUrl = dogs[x].url
+
+                //Send Info To Database
 
 
-
-
-        console.log(dogs.length)
-        //Randomly start at one of the dogs returned
-        var x = Math.floor(Math.random() * dogs.length)
-        var dogIdApi = dogs[x].id
-        var dogPhotoApi = dogs[x].photos[0].large
-        var dogNameApi = dogs[x].name
-        setImage(dogPhotoApi)
-        setName(dogNameApi)
-    }}}
+                setDescription(dogDescription)
+                setPhotoApi(dogPhoto)
+                setName(dogNameApi)
+                setEmail(Email)
+                setCity(City)
+                setDogId(dogId)
+                setDogURL(dogUrl)
+                }
+            }
+     
 
 
 
@@ -262,7 +328,7 @@ const Navbar2 = () => {
                 </div>
                 <div className="linkAccounts">
 
-                    <p className="linkActs"><Link to = "/linkaccts" style={{ textDecoration: 'none', color: "white" }}>Link Groups</Link></p>
+                    <p className="linkActs"><Link to="/signup" style={{ textDecoration: 'none', color: "white" }}>Link Groups</Link></p>
 
                 </div>
                 <div className="searchButton">
@@ -275,7 +341,8 @@ const Navbar2 = () => {
 
                 <div className="card">
                     <p className="petName">{dogName}</p>
-                    <img src={dogImage} className="petMatchImg" />
+                    <img src={dogPhotoApi} className="petMatchImg" />
+                    <p className="desc">{description}</p>
                 </div>
                 <div className="selectionBtns">
 
