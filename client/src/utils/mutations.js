@@ -39,13 +39,8 @@ export const SIGN_UP = gql`
 
 
 export const LIKE = gql`
-<<<<<<< HEAD
-    mutation like($email: String!, $groupName: String!, $dog_ID:ID!, $dogName: String!, $contactCity: String!, $contactEmail: String!, $dogURL: String!, $dogPhotoApi: String! ){
-        like(email: $email, groupName: $groupName, dog_ID: $dog_ID, dogName: $dogName, contactCity: $contactCity, contactEmail: $contactEmail, dogURL: $dogURL, dogPhotoApi: $dogPhotoApi){
-=======
     mutation like($dogPhotoApi: String, $email: String, $groupName: String, $dog_ID:ID, $dogName: String, $contactCity: String, $contactEmail: String, $dogURL: String){
         like(dogPhotoApi: $dogPhotoApi, email: $email, groupName: $groupName, dog_ID: $dog_ID, dogName: $dogName, contactCity: $contactCity, contactEmail: $contactEmail, dogURL: $dogURL){
->>>>>>> master
             dog_ID
         }
     }
