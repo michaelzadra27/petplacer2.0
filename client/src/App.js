@@ -66,10 +66,10 @@ function App() {
 
   <Switch>
     <Route exact path="/">
-      <LinkAccts />
+      <Signup />
     </Route>
     <Route exact path="/login">
-      <Login />
+      <MyLikes />
       {/* <Matchup /> */}
     </Route>
     <Route exact path="/signup">

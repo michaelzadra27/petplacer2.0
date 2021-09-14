@@ -153,8 +153,6 @@ justify-content: center;
   object-fit: contain;
   justify-content: center;
   border-radius: 45px;
-  background: linear-gradient(45deg, #FF6A5B, #FD2B7A);
-
 }
 
 .selectionBtns {
