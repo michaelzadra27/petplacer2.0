@@ -69,7 +69,7 @@ function App() {
 
   <Switch>
     <Route exact path="/">
-    <MyMatches />
+    <LinkAccts />
     </Route>
     <Route exact path="/navbar2">
       <Navbar2 />
