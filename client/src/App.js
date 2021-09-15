@@ -50,7 +50,7 @@ const client = new ApolloClient({
     })
   },
 
-  uri: 'http://localhost:3001/graphql',
+  uri: 'https://petplacer2.herokuapp.com/graphql',
 
 })
 
@@ -68,9 +68,15 @@ function App() {
   {/* <div className="flex-column justify-center align-center min-100-vh bg-primary"> */}
 
   <Switch>
-    {/* <Route exact path="/">
-    <LinkAccts />
-    </Route> */}
+
+    <Route exact path="/">
+    <Signup />
+    </Route> 
+
+    <Route exact path="/">
+    <Navbar2 />
+    </Route>
+
     <Route exact path="/navbar2">
       <Navbar2 />
     </Route>
