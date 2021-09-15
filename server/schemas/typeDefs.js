@@ -36,7 +36,7 @@ const typeDefs = gql`
         findGroup(groupName: String!): Group
         getLikes: [like]
         findLike: [like]
-        getMatches: Group
+        getMatches: [like]
     }
 
     type Mutation {
