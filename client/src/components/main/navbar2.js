@@ -183,7 +183,7 @@ const Navbar2 = () => {
         const removeBadBoys = () => {
             
             for (let i = 0; i < dogs.length; i++) {
-                console.log(dogs[i].name)
+                
                 if (dogs[i].photos.length === 0) {
                     dogs.splice(i, 1)
 
