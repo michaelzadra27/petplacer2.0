@@ -35,7 +35,7 @@ const typeDefs = gql`
         profiles: [Profile]
         findGroup(groupName: String!): Group
         getLikes(email: String!): [like]
-        getMatches(groupName: String!): like
+        getMatches: Group
     }
 
     type Mutation {

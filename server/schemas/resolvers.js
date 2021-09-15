@@ -24,10 +24,50 @@ const resolvers = {
             const likes = await Like.find({userEmail: email})
             return likes
         },
-        getMatches: async (parent, { groupName }) => {
-            console.log(groupName)
-            const groupLikes = await Like.find({groupName: groupName}, {userEmail: 0, groupName: 0, _id: 0, __v: 0})
-            console.log(groupLikes)
+        getMatches: async (parent, args, context) => {
+            console.log("match resolver")
+            console.log(context.user.groupName)
+            const groupMembers = await Group.find({groupName: context.user.groupName}, {profiles: 1})
+
+            console.log(groupMembers[0].profiles.length)
+
+            let allLikes = [];
+            for(i=0; i<groupMembers[0].profiles.length; i++){
+
+                const likes = await Like.find({email: groupMembers[0].profiles[i].email})
+                let sortedLikes = likes.sort(function(a, b) {
+                    let keyA = a.dogName,
+                        keyB = b.dogName;    
+                    // Compare the 2 dates
+                    if (keyA < keyB) return -1;
+                    if (keyA > keyB) return 1;
+                    return 0;
+                  });
+                
+                for(k=0; k<likes.length; k++){
+                    if(sortedLikes[i].dogName === sortedLikes[i+1].dogName){
+                        sortedLikes.splice(i,1)
+                    }
+                }
+                allLikes = [...allLikes, ...sortedLikes]
+            }
+            let allSortedLikes = allLikes.sort(function(a, b) {
+                let keyA = a.dogName,
+                    keyB = b.dogName;    
+                // Compare the 2 dates
+                if (keyA < keyB) return -1;
+                if (keyA > keyB) return 1;
+                return 0;
+              });
+
+            let matches = [];
+            for(l=0; l<allSortedLikes.length; l++){
+                if(!allSortedLikes[l+1]){break}
+                if(allSortedLikes[l].dogName === allSortedLikes[l+1].dogName){
+                    matches = [...matches, allSortedLikes[l]]
+                }
+            }
+            return matches
         }
     },
 
@@ -66,10 +106,8 @@ const resolvers = {
         },
         joinGroup: async (parent, { groupName }, context) => {
             // if(context.user){
-                console.log(groupName)
-                const joinedUser = await Profile.findOneAndUpdate({email: context.user.email}, {groupName: groupName})
-                console.log(joinedUser)
-                const joinedGroup = await Group.findOneAndUpdate({ groupName: groupName }, {$push: {profiles: joinedUser}})
+            const joinedUser = await Profile.findOneAndUpdate({email: context.user.email}, {groupName: groupName})
+            const joinedGroup = await Group.findOneAndUpdate({ groupName: groupName }, {$push: {profiles: joinedUser}})
             return joinedGroup
             // } else {
             //     throw new AuthenticationError('You need to be logged in to join a group')
