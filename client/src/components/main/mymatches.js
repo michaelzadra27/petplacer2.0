@@ -1,6 +1,10 @@
 import "./mymatches.css"
+import { useQuery } from "@apollo/client";
+import { GET_MATCHES } from "../../utils/queries";
 
 const MyMatches = () => {
+    const { loading, data } = useQuery(GET_MATCHES)
+    console.log(data)
     return ( 
         <div className="myMatches">
         <div className="matchCard">
