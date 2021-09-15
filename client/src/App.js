@@ -68,9 +68,9 @@ function App() {
   {/* <div className="flex-column justify-center align-center min-100-vh bg-primary"> */}
 
   <Switch>
-    <Route exact path="/">
+    {/* <Route exact path="/">
     <LinkAccts />
-    </Route>
+    </Route> */}
     <Route exact path="/navbar2">
       <Navbar2 />
     </Route>

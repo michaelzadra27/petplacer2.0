@@ -227,6 +227,7 @@ const Navbar2 = () => {
         removeBadBoys();
         //_______________________________________________________________________API go here
         console.log("like")
+        console.log(description)
         const {data} = await like({variables: {dogName:dogName, dogIdApi:dogIdApi, contactCity:contactCity, contactEmail:contactEmail, dogURL:dogURL, dogPhotoApi:dogPhotoApi, description:description}})
         // console.log(dogName)
         // console.log(dogIdApi)

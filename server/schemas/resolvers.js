@@ -20,16 +20,20 @@ const resolvers = {
             }
         },
         getLikes: async (parent, { email }) => {
+            console.log("getlikes")
             console.log(email)
             const likes = await Like.find({userEmail: email})
-            return likes
+            return {...likes}
         },
 
         findLike: async (parent, args, context) => {
-            console.log("hit")
+            console.log("findLike")
+            console.log(context.user.email)
             // console.log(context)
             // console.log(context.user.email)
-            return await Like.find({userEmail: 'new@email.com'})
+            const likes = await Like.find({userEmail: context.user.emai})
+            console.log(likes)
+            return likes
         },
         getMatches: async (parent, args, context) => {
             console.log("match resolver")
@@ -66,7 +70,6 @@ const resolvers = {
                 if (keyA > keyB) return 1;
                 return 0;
               });
-
             let matches = [];
             for(l=0; l<allSortedLikes.length; l++){
                 if(!allSortedLikes[l+1]){break}
@@ -80,6 +83,10 @@ const resolvers = {
                     matches.splice(g,1)
                 }
             }
+            console.log("+++++++++++++++++++++++")
+            console.log(matches)
+            console.log("////////////////////////////////////////////////////////////////////////////////////////////////")
+
             return matches
         }
     },
@@ -126,9 +133,9 @@ const resolvers = {
             //     throw new AuthenticationError('You need to be logged in to join a group')
             // }
         },
-        like: async (parent, {dogPhotoApi, email, groupName, dog_ID, dogName, contactCity, contactEmail, dogURL }, context) => {
+        like: async (parent, {dogPhotoApi, email, groupName, dog_ID, dogName, contactCity, contactEmail, dogURL, description}, context) => {
             console.log(context.user)
-            return await Like.create({dogPhotoApi: dogPhotoApi, email: context.user.email, groupName: context.user.groupName, dog_ID: dog_ID, dogName: dogName, contactCity: contactCity, contactEmail: contactEmail, dogURL: dogURL})
+            return await Like.create({dogPhotoApi: dogPhotoApi, email: context.user.email, groupName: context.user.groupName, dog_ID: dog_ID, dogName: dogName, contactCity: contactCity, contactEmail: contactEmail, dogURL: dogURL, description: description})
             // } else {
             //     throw new AuthenticationError('You need to be logged in to like a pet')
             // }
