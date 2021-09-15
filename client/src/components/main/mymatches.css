@@ -34,7 +34,7 @@ h4 {
     object-fit: contain;
     justify-content: center;
     height: 50px;
-    
+
     border-radius: 10px;
     box-shadow: 5px 10px 10px grey;
 }
@@ -57,7 +57,6 @@ h4 {
     height: 70px;
     font-size: 32px;
     margin-top: 20px;
-    margin-right: 40px;
     border-radius: 45px;
     background: linear-gradient(45deg, #FF6A5B, #FD2B7A);
     box-shadow: 5px 10px 10px grey;
