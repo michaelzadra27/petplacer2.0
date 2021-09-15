@@ -49,7 +49,7 @@ const client = new ApolloClient({
       }
     })
   },
-  uri: 'https://petplacer2.herokuapp.com/graphql',
+  uri: 'https://localhost:3001/graphql',
 })
 
 
@@ -67,7 +67,7 @@ function App() {
 
   <Switch>
     <Route exact path="/">
-    <Signup />
+    <MyMatches />
     </Route>
     <Route exact path="/navbar2">
       <Navbar2 />

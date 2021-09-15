@@ -1,9 +1,9 @@
 import "./mymatches.css"
+
 import { useQuery } from "@apollo/client";
 import { GET_MATCHES } from "../../utils/queries";
-
-
 import Logo from "../../../src/petplacer2.png"
+
 
 
 const MyMatches = () => {
@@ -25,32 +25,20 @@ const MyMatches = () => {
     // const [contactCity, setCity] = useState('')
     return (
         <div className="myMatches">
-            <h4>My Matches</h4>
+            <h4 className="matchTitle">My Matches</h4>
+            {/* Match card with info */}
             <div className="matchCard">
                 <h3 className="likedInfo">{dogName}</h3>
                 <div className="matchedPets">
-                    <div>
-                        <img className="smallMatchCard" src={dogPhotoApi}></img>
-                        <p className="desc">{description}</p>
+                    <img src={dogPhotoApi} className="smallLikeCard" />
+                        <div>
+                            <p className="desc">{contactEmail}</p>
+                            <p className="desc">{contactCity}</p>
+                            <p className="desc">{description}</p>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div className="matchCard">
-                <h3 className="likedInfo">{dogName}</h3>
-                <div className="matchedPets">
                     <div>
-                        <img className="smallMatchCard" src={dogPhotoApi}></img>
-                        <p className="desc">{description}</p>
-                    </div>
-                </div>
-            </div>
-            <div className="matchCard">
-                <h3 className="likedInfo">{dogName}</h3>
-                <div className="matchedPets">
-                    <div>
-                        <img className="smallMatchCard" src={dogPhotoApi}></img>
-                        <p className="desc">{description}</p>
-                    </div>
+                        <p className="desc">{dogURL}</p>
                 </div>
             </div>
             <div className="selections">

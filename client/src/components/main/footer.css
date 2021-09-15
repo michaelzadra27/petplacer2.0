@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    padding: 0;
+    height:1000px;
+   }
+   .footer {
+    background-color: rgb(0, 0, 0);
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    color: white;
+    font-size: 12px;
+    font-weight: 100;
+   }
+   .footy{
+       display: flex;
+       justify-content: center;
+       padding: 20px;
+   }
