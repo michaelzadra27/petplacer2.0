@@ -39,8 +39,7 @@ const resolvers = {
             console.log("match resolver")
             console.log(context.user.groupName)
             const groupMembers = await Group.find({groupName: context.user.groupName}, {profiles: 1})
-
-            console.log(groupMembers[0].profiles.length)
+            
 
             let allLikes = [];
             for(i=0; i<groupMembers[0].profiles.length; i++){
@@ -54,14 +53,22 @@ const resolvers = {
                     if (keyA > keyB) return 1;
                     return 0;
                   });
-                
-                for(k=0; k<likes.length; k++){
-                    if(sortedLikes[i].dogName === sortedLikes[i+1].dogName){
-                        sortedLikes.splice(i,1)
+                    console.log("length"+likes.length)
+                    if(likes.length>1){
+                            for(k=0; k<likes.length; k++){
+                                console.log(k)
+                                if(sortedLikes[k].dogName === sortedLikes[k+1].dogName){
+                                    dupe = true
+                                    console.log("hit")
+                                    sortedLikes.splice(k,1)
+                                }
+                            }
+                        
                     }
-                }
-                allLikes = [...allLikes, ...sortedLikes]
+                    
+                    allLikes = [...allLikes, ...sortedLikes]
             }
+            console.log("======================================")
             let allSortedLikes = allLikes.sort(function(a, b) {
                 let keyA = a.dogName,
                     keyB = b.dogName;    
@@ -77,12 +84,15 @@ const resolvers = {
                     matches = [...matches, allSortedLikes[l]]
                 }
             }
-            
-            for(g=0; g<matches.length; g++){
-                if(matches[g].dogName === matches[g+1].dogName){
-                    matches.splice(g,1)
+            console.log("hit")
+            if(matches.length>1){
+                for(g=0; g<matches.length; g++){
+                    if(matches[g].dogName === matches[g+1].dogName){
+                        matches.splice(g,1)
+                    }
                 }
             }
+            
             console.log("+++++++++++++++++++++++")
             console.log(matches)
             console.log("////////////////////////////////////////////////////////////////////////////////////////////////")
