@@ -20,7 +20,15 @@ export const FIND_GROUP = gql`
 export const GET_LIKES = gql`
     query getLikes{
         getLikes{
-                profile
+                dog_ID
+        }
+    }
+`
+
+export const FIND_LIKE = gql`
+    query findLike{
+        findLike{
+        		dog_ID
         }
     }
 `

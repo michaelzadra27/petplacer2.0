@@ -49,7 +49,7 @@ const client = new ApolloClient({
       }
     })
   },
-  uri: 'https://petplacer2.herokuapp.com/graphql',
+  uri: 'http://localhost:3001/graphql',
 })
 
 
