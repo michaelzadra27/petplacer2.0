@@ -28,7 +28,15 @@ export const GET_LIKES = gql`
 export const FIND_LIKE = gql`
     query findLike{
         findLike{
-        		dog_ID
+            userEmail
+            groupName
+            dog_ID
+            dogName
+            contactCity
+            contactEmail
+            dogURL
+            dogPhotoApi
+            description
         }
     }
 `
@@ -44,6 +52,7 @@ export const GET_MATCHES = gql`
             contactEmail
             dogURL
             dogPhotoApi
+            description
         }
     }
 `
