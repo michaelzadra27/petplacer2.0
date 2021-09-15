@@ -5,7 +5,7 @@ import {
   ApolloProvider,
   HttpLink,
 } from '@apollo/react-hooks';
-import  ApolloClient  from 'apollo-boost';
+import ApolloClient from 'apollo-boost';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -49,7 +49,7 @@ const client = new ApolloClient({
       }
     })
   },
-  uri: 'https://petplacer2.herokuapp.com/graphql',
+  uri: 'http://localhost:3000/graphql',
 })
 
 
@@ -57,46 +57,46 @@ const client = new ApolloClient({
 console.log(process.env)
 function App() {
   return (
-    
 
-<ApolloProvider client={client}>
 
-<Router>
-  <Navbar />
-  {/* <div className="flex-column justify-center align-center min-100-vh bg-primary"> */}
+    <ApolloProvider client={client}>
 
-  <Switch>
-    <Route exact path="/">
-    <Signup />
-    </Route>
-    <Route exact path="/navbar2">
-      <Navbar2 />
-    </Route>
-    <Route exact path="/login">
-      <Login />
-    </Route>
-    <Route exact path="/signup">
-      <Signup />
-    </Route>
-    <Route exact path="/home">
-      <Home />
-    </Route>
-    <Route exact path="/myLikes">
-      <MyLikes />
-    </Route>
-    <Route exact path="/myMatches">
-      <MyMatches />
-    </Route>
-    <Route exact path="/linkaccts">
-      <LinkAccts />
-    </Route>
-    <Route path="*">
-      <Signup/>
-    </Route>
-  </Switch>
-  <Footer />
-</Router>
-</ApolloProvider>
+      <Router>
+        <Navbar />
+        {/* <div className="flex-column justify-center align-center min-100-vh bg-primary"> */}
+
+        <Switch>
+          <Route exact path="/">
+            <Signup />
+          </Route>
+          <Route exact path="/navbar2">
+            <Navbar2 />
+          </Route>
+          <Route exact path="/login">
+            <Login />
+          </Route>
+          <Route exact path="/signup">
+            <Signup />
+          </Route>
+          <Route exact path="/home">
+            <Home />
+          </Route>
+          <Route exact path="/myLikes">
+            <MyLikes />
+          </Route>
+          <Route exact path="/myMatches">
+            <MyMatches />
+          </Route>
+          <Route exact path="/linkaccts">
+            <LinkAccts />
+          </Route>
+          <Route path="*">
+            <Signup />
+          </Route>
+        </Switch>
+        <Footer />
+      </Router>
+    </ApolloProvider>
   );
 }
 

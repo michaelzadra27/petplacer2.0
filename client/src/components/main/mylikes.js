@@ -12,12 +12,12 @@ var contactCity = "Sacramento"
 
 const MyLikes = () => {
 
-// const [dogPhotoApi, setPhotoApi] = useState('')
-// const [dogURL, setDogURL] = useState('')
-// const [contactEmail, setEmail] = useState('')
-// const [dogName, setName] = useState('Dog Name');
-// const [description, setDescription] = useState('')
-// const [contactCity, setCity] = useState('')
+    // const [dogPhotoApi, setPhotoApi] = useState('')
+    // const [dogURL, setDogURL] = useState('')
+    // const [contactEmail, setEmail] = useState('')
+    // const [dogName, setName] = useState('Dog Name');
+    // const [description, setDescription] = useState('')
+    // const [contactCity, setCity] = useState('')
 
     return (
         <div className="myLikes">
@@ -37,14 +37,16 @@ const MyLikes = () => {
             <div className="likeCard">
                 <h3 className="likedInfo">{dogName}</h3>
                 <div className="likedPets">
-                    <img src={dogPhotoApi} className="smallLikeCard" />
-                    <p className="desc">{description}</p>
+
                 </div>
             </div>
             <div className="likeCard">
                 <h3 className="likedInfo">{dogName}</h3>
-                <div className="likedPets">
+                <div>
                     <img src={dogPhotoApi} className="smallLikeCard" />
+                    <p className="desc">{contactEmail}</p>
+                    <p className="desc">{contactCity}</p>
+                    <p className="desc">{dogURL}</p>
                     <p className="desc">{description}</p>
                 </div>
             </div>
