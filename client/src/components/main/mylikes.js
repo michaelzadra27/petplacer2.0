@@ -37,8 +37,13 @@ const MyLikes = () => {
             <div className="likeCard">
                 <h3 className="likedInfo">{dogName}</h3>
                 <div className="likedPets">
-                    <img src={dogPhotoApi} className="smallLikeCard" />
-                    <p className="desc">{description}</p>
+                    <div>
+                        <img src={dogPhotoApi} className="smallLikeCard" />
+                        <p className="desc">{contactEmail}</p>
+                        <p className="desc">{contactCity}</p>
+                        <p className="desc">{dogURL}</p>
+                        <p className="desc">{description}</p>
+                    </div>
                 </div>
             </div>
             <div className="likeCard">
