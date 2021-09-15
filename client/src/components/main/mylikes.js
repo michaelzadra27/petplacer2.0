@@ -1,6 +1,8 @@
 import "./mylikes.css"
 import React, { useState } from 'react';
-import { useMutation } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/react-hooks';
+import { GET_LIKES } from '../../utils/queries'
+import { FIND_LIKE } from '../../utils/queries'
 
 var dogName = "Ruben"
 var dogPhotoApi = "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/52506384/5/?bust=1631388396&width=600"
@@ -10,6 +12,11 @@ var contactEmail = "AnimalControl2@Madera-County.com"
 var contactCity = "Sacramento"
 
 const MyLikes = () => {
+    console.log("++++++++++++++++++++++++++++++++++++++++++++++++")
+    // const {loading, data} = useQuery(GET_LIKES)
+
+    const {loading, data} = useQuery(FIND_LIKE)
+    console.log(data)
 
 // const [dogPhotoApi, setPhotoApi] = useState('')
 // const [dogURL, setDogURL] = useState('')

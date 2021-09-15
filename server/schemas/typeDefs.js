@@ -34,7 +34,8 @@ const typeDefs = gql`
         me: Profile
         profiles: [Profile]
         findGroup(groupName: String!): Group
-        getLikes(email: String!): [like]
+        getLikes: [like]
+        findLike: [like]
         getMatches: Group
     }
 

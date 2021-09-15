@@ -24,6 +24,13 @@ const resolvers = {
             const likes = await Like.find({userEmail: email})
             return likes
         },
+
+        findLike: async (parent, args, context) => {
+            console.log("hit")
+            // console.log(context)
+            // console.log(context.user.email)
+            return await Like.find({userEmail: 'new@email.com'})
+        },
         getMatches: async (parent, args, context) => {
             console.log("match resolver")
             console.log(context.user.groupName)
