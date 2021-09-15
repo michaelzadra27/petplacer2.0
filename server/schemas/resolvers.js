@@ -22,8 +22,8 @@ const resolvers = {
         getLikes: async (parent, { email }) => {
             console.log("getlikes")
             console.log(email)
-            const likes = await Like.find({userEmail: email})
-            return {...likes}
+            const likessssss = await Like.find({userEmail: email})
+            return {...likessssss}
         },
 
         findLike: async (parent, args, context) => {
@@ -31,7 +31,7 @@ const resolvers = {
             console.log(context.user.email)
             // console.log(context)
             // console.log(context.user.email)
-            const likes = await Like.find({userEmail: context.user.emai})
+            const likes = await Like.find({email: context.user.email})
             console.log(likes)
             return likes
         },
