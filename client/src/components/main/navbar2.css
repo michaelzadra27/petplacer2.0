@@ -31,6 +31,13 @@ p{
   margin-right: 20px;
   font-weight: bolder;
 }
+
+.desc{
+  display: flex;
+  margin-left: 20px !important;
+  margin-top: 20px !important;
+}
+
 .search-button {
   display: flex;
   justify-content: center;
@@ -138,6 +145,7 @@ justify-content: center;
 .petName{
   display: flex;
   justify-content: center;
+  margin-right: 0px !important;
   font-size: 32px;
   text-decoration: none;
   margin-bottom:20px
@@ -153,8 +161,6 @@ justify-content: center;
   object-fit: contain;
   justify-content: center;
   border-radius: 45px;
-  background: linear-gradient(45deg, #FF6A5B, #FD2B7A);
-
 }
 
 .selectionBtns {

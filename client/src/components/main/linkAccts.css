@@ -94,3 +94,20 @@
 .closeLinkBtn:hover{
     cursor: pointer;
 }
+.createGroupBtn {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 20%;
+    margin-top: 20px;
+    margin-left: 30px;
+    border-radius: 45px;
+    color: white;
+    font-size: 18px;
+    background: linear-gradient(45deg, #FF6A5B, #FD2B7A);
+    box-shadow: 5px 10px 10px grey;
+    margin-left: auto;
+}
+.createGroupBtn:hover{
+    cursor: pointer;
+}

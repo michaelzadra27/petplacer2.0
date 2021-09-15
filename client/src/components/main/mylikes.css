@@ -7,12 +7,14 @@
 }
 
 .likeCard{
+    
     padding: 30px;
     margin-top: 30px;
     height: 50vh;
     width: 50vw;
     border-radius: 45px;
     box-shadow: 5px 10px 10px grey;
+    
 }
 
 h4 {
@@ -27,11 +29,15 @@ h4 {
 }
 
 .smallLikeCard{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    overflow: hidden;
+    object-fit: contain;
+    justify-content: center;
     height: 50px;
-    width: 50px;
-    background-color: lightcoral;
+    /* width: 50px; */
     border-radius: 10px;
-    margin-left: 15px;
     box-shadow: 5px 10px 10px grey;
 }
 
@@ -58,3 +64,18 @@ h4 {
     background: linear-gradient(45deg, #FF6A5B, #FD2B7A);
     box-shadow: 5px 10px 10px grey;
 }
+
+.smallLikeCard{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    overflow: hidden;
+    object-fit: contain;
+    justify-content: center;
+    height: 200px;
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 5px 10px 10px grey;
+}
+
+
