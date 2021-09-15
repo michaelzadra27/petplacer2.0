@@ -3,7 +3,6 @@ import "./mylikes.css"
 const likeCard = (props) => {
     console.log("in card")
     const dog = props.dogdata
-    console.log(dog)
     return(
         <div className="likeCard">
             <h3 className="likedInfo">{dog.dogName}</h3>

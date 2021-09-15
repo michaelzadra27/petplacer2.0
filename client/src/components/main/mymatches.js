@@ -8,14 +8,13 @@ import LikeCard from './likeCard'
 
 
 const MyMatches = () => {
-    const { loading, data } = useQuery(GET_MATCHES)
-    console.log(data)
+    const { loading, data, refetch } = useQuery(GET_MATCHES)
 
     
     function renderCard(data){
         if(data){
             console.log("in if")
-            console.log(data)
+            
             return data.getMatches.map((dog, i)=><LikeCard key={i} dogdata = {dog}/>)
         }
         else{
