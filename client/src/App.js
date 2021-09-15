@@ -69,7 +69,7 @@ function App() {
 
   <Switch>
     <Route exact path="/">
-    <LinkAccts />
+    <Navbar2 />
     </Route>
     <Route exact path="/navbar2">
       <Navbar2 />
