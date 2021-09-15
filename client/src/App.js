@@ -67,7 +67,7 @@ function App() {
 
   <Switch>
     <Route exact path="/">
-    <Login />
+    <MyMatches />
     </Route>
     <Route exact path="/navbar2">
       <Navbar2 />

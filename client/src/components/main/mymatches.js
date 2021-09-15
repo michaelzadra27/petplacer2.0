@@ -1,5 +1,5 @@
 import "./mymatches.css"
-import Logo from "../../../src/petplacer2.png"
+
 
 var dogName = "Ruben"
 var dogPhotoApi = "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/52506384/5/?bust=1631388396&width=600"
@@ -18,32 +18,20 @@ const MyMatches = () => {
 // const [contactCity, setCity] = useState('')
     return (
         <div className="myMatches">
-            <h4>My Matches</h4>
+            <h4 className="matchTitle">My Matches</h4>
+            {/* Match card with info */}
             <div className="matchCard">
                 <h3 className="likedInfo">{dogName}</h3>
                 <div className="matchedPets">
-                    <div>
-                        <img className="smallMatchCard" src={dogPhotoApi}></img>
-                        <p className="desc">{description}</p>
+                    <img src={dogPhotoApi} className="smallLikeCard" />
+                        <div>
+                            <p className="desc">{contactEmail}</p>
+                            <p className="desc">{contactCity}</p>
+                            <p className="desc">{description}</p>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div className="matchCard">
-                <h3 className="likedInfo">{dogName}</h3>
-                <div className="matchedPets">
                     <div>
-                        <img className="smallMatchCard" src={dogPhotoApi}></img>
-                        <p className="desc">{description}</p>
-                    </div>
-                </div>
-            </div>
-            <div className="matchCard">
-                <h3 className="likedInfo">{dogName}</h3>
-                <div className="matchedPets">
-                    <div>
-                        <img className="smallMatchCard" src={dogPhotoApi}></img>
-                        <p className="desc">{description}</p>
-                    </div>
+                        <p className="desc">{dogURL}</p>
                 </div>
             </div>
             <div className="selections">

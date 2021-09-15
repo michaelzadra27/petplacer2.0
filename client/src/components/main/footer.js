@@ -1,21 +1,12 @@
-const Footer = () => {
-    return ( 
-        <div className="footer" style={{
-            display: "flex",
-            backgroundColor: "black",
-            justifyContent: "center",
-        }}>
-        <h4 style={{
-            display: "flex",
-            backgroundColor: "black",
-            color: "white",
-            height: "60px",
-            alignItems: "flex-end",
-            justifyContent: "center",
-            fontWeight: "100"
-        }}>© Pet Placer 2021. All rights reserved</h4>
-        </div>
-     );
-}
- 
+
+import React from 'react';
+import "./footer.css";
+  
+const Footer = () => (
+  <footer className="footer">
+    <p className="footy">Created by Brandon, Mike, Temitayo, and Trenton. © Pet Placer 2021. All rights reserved.</p>
+  
+  </footer>
+);
+  
 export default Footer;
