@@ -22,6 +22,7 @@ const typeDefs = gql`
         contactCity: String
         contactEmail: String
         dogURL: String
+        dogPhotoApi: String
     }
 
     type Auth {
@@ -32,7 +33,7 @@ const typeDefs = gql`
     type Query {
         me: Profile
         profiles: [Profile]
-        findGroup(name: String!): Group
+        findGroup(groupName: String!): Group
         getLikes(email: String!): [like]
         getMatches(groupName: String!): like
     }
@@ -40,8 +41,8 @@ const typeDefs = gql`
     type Mutation {
         signUp(email: String!, password: String!): Auth
         login(email: String!, password: String!): Auth
-        createGroup(groupName: String!, email: String!): Group
-        joinGroup(groupName: String!, email: String!): Group
+        createGroup(groupName: String!): Auth
+        joinGroup(groupName: String!): Group
         like(dogPhotoApi: String, email: String, groupName: String, dog_ID: ID, dogName: String, contactCity: String, contactEmail: String, dogURL: String): like
     }
 `

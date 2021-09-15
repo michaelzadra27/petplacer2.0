@@ -7,25 +7,24 @@ const expiration = "2h";
 module.exports = {
     // function for our authenticated routes
     authMiddleware: function ({ req }) {
-        
         let token = req.body.token || req.query.token || req.headers.authorization;
 
-
         // ["Bearer", "<tokenvalue>"]
+        
         if (req.headers.authorization) {
             token = token.split(" ").pop().trim();
         }
+        
 
         if (!token) {
             return req;
         }
 
         // verify token and get user data out of it
-        try {
+        try {  
                 const { data } = jwt.verify(token, secret, { maxAge: expiration });
-                console.log(data)
+                
                 req.user = data;
-                console.log(req.user)
         } catch {
             console.log("Invalid token");
             // return res.status(400).json({ message: "invalid token!" });
@@ -36,8 +35,15 @@ module.exports = {
         return req;
     },
 
-    signToken: function ({ email, _id }) {
-        const payload = { email, _id };
+    signToken: function ({ email, _id, groupName }) {
+        let payload;
+        if(groupName){
+            console.log("group is passed in")
+            payload = { email, _id, groupName };
+        } else {
+            payload = { email, _id }
+        }
+        
 
         return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
     },

@@ -33,8 +33,8 @@ h4 {
     overflow: hidden;
     object-fit: contain;
     justify-content: center;
-    height: 50px;
-
+    height: 200px;
+    width: 200px;
     border-radius: 10px;
     box-shadow: 5px 10px 10px grey;
 }

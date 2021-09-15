@@ -5,7 +5,7 @@ import {
   ApolloProvider,
   HttpLink,
 } from '@apollo/react-hooks';
-import { ApolloClient } from '@apollo/react-hooks';
+import  ApolloClient  from 'apollo-boost';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -39,20 +39,21 @@ import LinkAccts from './components/main/linkAccts';
 //   };
 // });
 
-console.log(process.env)
+
 const client = new ApolloClient({
   request: (operation) => {
-    const token = localStorage.getItem('id_token');
-
+    const token = localStorage.getItem('id_token')
     operation.setContext({
       headers: {
         authorization: token ? `Bearer ${token}` : '',
-      },
-    });
+      }
+    })
   },
-  uri: 'http://localhost:3001/graphql',
-  cache: new InMemoryCache(),
-});
+  uri: 'https://localhost:3001/graphql',
+})
+
+
+
 console.log(process.env)
 function App() {
   return (
@@ -68,9 +69,9 @@ function App() {
     <Route exact path="/">
     <Login />
     </Route>
-    {/* <Route exact path="/navbar2">
+    <Route exact path="/navbar2">
       <Navbar2 />
-    </Route> */}
+    </Route>
     <Route exact path="/login">
       <Login />
     </Route>
