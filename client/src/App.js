@@ -49,7 +49,9 @@ const client = new ApolloClient({
       }
     })
   },
+
   uri: 'http://localhost:3001/graphql',
+
 })
 
 
@@ -67,7 +69,7 @@ function App() {
 
   <Switch>
     <Route exact path="/">
-    <Signup />
+    <LinkAccts />
     </Route>
     <Route exact path="/navbar2">
       <Navbar2 />

@@ -74,7 +74,7 @@ const resolvers = {
                     matches = [...matches, allSortedLikes[l]]
                 }
             }
-            let cleanMatches =[]
+            
             for(g=0; g<matches.length; g++){
                 if(matches[g].dogName === matches[g+1].dogName){
                     matches.splice(g,1)
