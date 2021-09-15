@@ -1,6 +1,5 @@
 import "./mymatches.css"
-
-import { useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/react-hooks";
 import { GET_MATCHES } from "../../utils/queries";
 import Logo from "../../../src/petplacer2.png"
 

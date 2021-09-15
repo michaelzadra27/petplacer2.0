@@ -36,9 +36,14 @@ export const FIND_LIKE = gql`
 export const GET_MATCHES = gql`
     query getMatches{
         getMatches{
-            profile{
-                _id
-            }
+            userEmail
+            groupName
+            dog_ID
+            dogName
+            contactCity
+            contactEmail
+            dogURL
+            dogPhotoApi
         }
     }
 `

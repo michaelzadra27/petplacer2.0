@@ -74,6 +74,12 @@ const resolvers = {
                     matches = [...matches, allSortedLikes[l]]
                 }
             }
+            
+            for(g=0; g<matches.length; g++){
+                if(matches[g].dogName === matches[g+1].dogName){
+                    matches.splice(g,1)
+                }
+            }
             return matches
         }
     },
