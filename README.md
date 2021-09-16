@@ -13,13 +13,13 @@
  # Preview
 
  ### Homepage
- ![Preview](client/src/public/images/HomePage.png)
+ ![Preview](./client/src/public/images/HomePage.png)
 
  ### MyLikes
- ![Preview](client/src/public/images/Likes.png) 
+ ![Preview](./client/src/public/images/Likes.png) 
 
  ### Groups
- ![Preview](client/src/public/images/CreateGroup.png)
+ ![Preview](./client/src/public/images/CreateGroup.png)
 
 # Description
 A tinder styled application that makes pet adoption an easy and fun experience! While using real pets from the PETFINDER API, you can select which pet you might potentially want to adopt. You may also create or join groups in order discuss different type of pets.
