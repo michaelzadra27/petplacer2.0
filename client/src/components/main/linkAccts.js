@@ -64,7 +64,7 @@ const LinkAccts = () => {
                 </div>
                 <div className="linkResults">
                     <form className="joinEmails" onSubmit={handleJoinGroup}>
-                        <p className="emailResults">EMAIL RESULTS{foundGroup}</p>
+                        <p className="emailResults">{foundGroup}</p>
                         <button className="linkResultBtn">Join</button>
                     </form>
                 </div>

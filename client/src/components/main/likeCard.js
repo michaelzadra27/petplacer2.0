@@ -15,7 +15,7 @@ const likeCard = (props) => {
                 </div>
             </div>
             <div>
-                <p className="desc">{dog.dogURL}</p>
+                <a className="desc" href={dog.dogURL}>{dog.dogURL}</a>
             </div>
         </div>
     )
