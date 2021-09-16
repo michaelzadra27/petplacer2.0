@@ -13,10 +13,10 @@
  # Preview
 
  ### Homepage
- ![Preview](./client/public/images/HomePage.png)
+ ![Preview](./client/public/images/login.png)
 
  ### MyLikes
- ![Preview](./client/public/images/Likes.png) 
+ ![Preview](./client/public/images/likes.png) 
 
  ### Groups
  ![Preview](./client/public/images/CreateGroup.png)
