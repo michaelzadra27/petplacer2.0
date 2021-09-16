@@ -1,51 +1,51 @@
 import "./mymatches.css"
+import { useQuery } from "@apollo/react-hooks";
+import { GET_MATCHES } from "../../utils/queries";
+import { useState, useEffect } from 'react'
 import Logo from "../../../src/petplacer2.png"
+import MatchCard from './matchCard'
 
-var dogName = "Ruben"
-var dogPhotoApi = "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/52506384/5/?bust=1631388396&width=600"
-var description = "Cute and playful little guy. Ready for their forever home. \n\nTo adopt please apply online at foac.us"
-var dogURL = "https://www.petfinder.com/dog/cheyenne-52978230/ca/madera/madera-county-animal-control-ca628/?referrer_id=c214bc92-08ab-4f73-985b-d06bda77705e"
-var contactEmail = "AnimalControl2@Madera-County.com"
-var contactCity = "Sacramento"
+
+
 
 const MyMatches = () => {
+    console.log("in matches")
+    const { loading, data, refetch } = useQuery(GET_MATCHES)
+    console.log(data)
 
-    // const [dogPhotoApi, setPhotoApi] = useState('')
-// const [dogURL, setDogURL] = useState('')
-// const [contactEmail, setEmail] = useState('')
-// const [dogName, setName] = useState('Dog Name');
-// const [description, setDescription] = useState('')
-// const [contactCity, setCity] = useState('')
+
+
+
+        // const [cardData, dataSet] = useState([])
+      
+        // useEffect(() => {
+        //   async function fetchMyAPI() {
+        //     let response = await refetch()
+        //     console.log(response)
+        //     dataSet(response)
+        //   }
+      
+        //   fetchMyAPI()
+        // }, [])
+
+    
+    function renderCard(data){
+        if(data){
+            console.log("in if")
+            
+            return data.getMatches.map((dog, i)=><MatchCard key={i} dogdata = {dog}/>)
+        }
+        else{
+            
+            return
+        }
+    }
+
     return (
         <div className="myMatches">
-            <h4>My Matches</h4>
-            <div className="matchCard">
-                <h3 className="likedInfo">{dogName}</h3>
-                <div className="matchedPets">
-                    <div>
-                        <img className="smallMatchCard" src={dogPhotoApi}></img>
-                        <p className="desc">{description}</p>
-                    </div>
-                </div>
-            </div>
-            <div className="matchCard">
-                <h3 className="likedInfo">{dogName}</h3>
-                <div className="matchedPets">
-                    <div>
-                        <img className="smallMatchCard" src={dogPhotoApi}></img>
-                        <p className="desc">{description}</p>
-                    </div>
-                </div>
-            </div>
-            <div className="matchCard">
-                <h3 className="likedInfo">{dogName}</h3>
-                <div className="matchedPets">
-                    <div>
-                        <img className="smallMatchCard" src={dogPhotoApi}></img>
-                        <p className="desc">{description}</p>
-                    </div>
-                </div>
-            </div>
+            <h4 className="matchTitle">My Matches</h4>
+            {renderCard(data)}
+
             <div className="selections">
                 <button className="back-button match">Back</button>
             </div>

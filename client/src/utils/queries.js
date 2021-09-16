@@ -18,19 +18,41 @@ export const FIND_GROUP = gql`
 `
 
 export const GET_LIKES = gql`
-    query getLikes($email: String!){
-        getLikes(email: $email){
-              userEmail
-              groupName
-              dog_ID
+    query getLikes{
+        getLikes{
+                dog_ID
+        }
+    }
+`
+
+export const FIND_LIKE = gql`
+    query findLike{
+        findLike{
+            userEmail
+            groupName
+            dog_ID
+            dogName
+            contactCity
+            contactEmail
+            dogURL
+            dogPhotoApi
+            description
         }
     }
 `
 
 export const GET_MATCHES = gql`
-    query getMatches($groupName: String!){
-        getMatcches(groupName: $groupName){
+    query getMatches{
+        getMatches{
+            userEmail
+            groupName
             dog_ID
+            dogName
+            contactCity
+            contactEmail
+            dogURL
+            dogPhotoApi
+            description
         }
     }
 `

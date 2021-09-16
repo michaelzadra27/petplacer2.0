@@ -15,37 +15,29 @@ const LinkAccts = () => {
 
     const handleCreateChange = (event) => {
         const { name, value } = event.target;
-        console.log("create")
         setCreateForm({ ...createFormState, [name]: value });
     };
 
     const handleSearchChange = (event) => {
         const { name, value } = event.target;
-        console.log("search")
         setSearchForm({ ...searchFormState, [name]: value });
     };
     //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     const SearchForGroup = async (event) => {
         event.preventDefault()
         const results = await refetch({...searchFormState})
-        console.log(results.data.findGroup.groupName)
         setfoundGroup(results.data.findGroup.groupName)
     }
 
     const createGroup = (event) => {
         event.preventDefault()
-        console.log(createFormState)
 
         const { data } = newGroup({variables: {...createFormState}})
-        console.log(data)
     }
 
     const handleJoinGroup = async (event) => {
         event.preventDefault()
-        console.log("join")
-        console.log(foundGroup)
         const { data } = await joinGroup({variables: { groupName: foundGroup }})
-        console.log(data)
     }
 
     return (
@@ -71,7 +63,7 @@ const LinkAccts = () => {
                     </form>
                 </div>
                 <div className="linkResults">
-                    <form onSubmit={handleJoinGroup}>
+                    <form className="joinEmails" onSubmit={handleJoinGroup}>
                         <p className="emailResults">{foundGroup}</p>
                         <button className="linkResultBtn">Join</button>
                     </form>

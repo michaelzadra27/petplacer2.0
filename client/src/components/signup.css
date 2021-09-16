@@ -47,3 +47,7 @@ h2{
 .create-account-button:hover {
     cursor: pointer;
 }
+.loginLink{
+    display: flex;
+    justify-content: center;
+}

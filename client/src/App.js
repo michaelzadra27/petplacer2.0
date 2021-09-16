@@ -49,7 +49,10 @@ const client = new ApolloClient({
       }
     })
   },
-  uri: 'http://localhost:3000/graphql',
+
+  uri: 'https://petplacer2.herokuapp.com/graphql',
+
+
 })
 
 
@@ -61,42 +64,46 @@ function App() {
 
     <ApolloProvider client={client}>
 
-      <Router>
-        <Navbar />
-        {/* <div className="flex-column justify-center align-center min-100-vh bg-primary"> */}
 
-        <Switch>
-          <Route exact path="/">
-            <Signup />
-          </Route>
-          <Route exact path="/navbar2">
-            <Navbar2 />
-          </Route>
-          <Route exact path="/login">
-            <Login />
-          </Route>
-          <Route exact path="/signup">
-            <Signup />
-          </Route>
-          <Route exact path="/home">
-            <Home />
-          </Route>
-          <Route exact path="/myLikes">
-            <MyLikes />
-          </Route>
-          <Route exact path="/myMatches">
-            <MyMatches />
-          </Route>
-          <Route exact path="/linkaccts">
-            <LinkAccts />
-          </Route>
-          <Route path="*">
-            <Signup />
-          </Route>
-        </Switch>
-        <Footer />
-      </Router>
-    </ApolloProvider>
+  <Switch>
+
+    <Route exact path="/">
+    <Signup />
+    </Route> 
+
+    <Route exact path="/">
+    <Navbar2 />
+    </Route>
+
+    <Route exact path="/navbar2">
+      <Navbar2 />
+    </Route>
+    <Route exact path="/login">
+      <Login />
+    </Route>
+    <Route exact path="/signup">
+      <Signup />
+    </Route>
+    <Route exact path="/home">
+      <Home />
+    </Route>
+    <Route exact path="/myLikes">
+      <MyLikes />
+    </Route>
+    <Route exact path="/myMatches">
+      <MyMatches />
+    </Route>
+    <Route exact path="/linkaccts">
+      <LinkAccts />
+    </Route>
+    <Route path="*">
+      <Signup/>
+    </Route>
+  </Switch>
+  <Footer />
+</Router>
+</ApolloProvider>
+
   );
 }
 

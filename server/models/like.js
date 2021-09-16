@@ -29,6 +29,9 @@ const likeSchema = new Schema({
   dogPhotoApi: {
     type: String,
   },
+  description: {
+    type: String
+  }
 
 });
 
