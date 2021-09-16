@@ -16,7 +16,7 @@
  ![Preview](./client/public/images/login.png)
 
  ### MyLikes
- ![Preview](./client/public/images/likes.png)
+ ![Preview](./client/public/images/likes.PNG)
 
  ### Groups
  ![Preview](./client/public/images/CreateGroup.png)
