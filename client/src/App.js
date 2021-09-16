@@ -5,7 +5,7 @@ import {
   ApolloProvider,
   HttpLink,
 } from '@apollo/react-hooks';
-import  ApolloClient  from 'apollo-boost';
+import ApolloClient from 'apollo-boost';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -49,7 +49,8 @@ const client = new ApolloClient({
       }
     })
   },
-  uri: 'http://localhost:3001/graphql',
+
+  uri: 'https://petplacer2.herokuapp.com/graphql',
 
 
 })
@@ -59,13 +60,10 @@ const client = new ApolloClient({
 console.log(process.env)
 function App() {
   return (
-    
 
-<ApolloProvider client={client}>
 
-<Router>
-  <Navbar />
-  {/* <div className="flex-column justify-center align-center min-100-vh bg-primary"> */}
+    <ApolloProvider client={client}>
+
 
   <Switch>
 
@@ -105,6 +103,7 @@ function App() {
   <Footer />
 </Router>
 </ApolloProvider>
+
   );
 }
 
