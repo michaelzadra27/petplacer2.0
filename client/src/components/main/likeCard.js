@@ -6,7 +6,7 @@ const likeCard = (props) => {
     const dog = props.dogdata
     return(
         <div className="likeCard">
-            <h3 className="likedInfo">{dog.dogName}</h3>
+            {/* <h3 className="likedInfo">{dog.dogName}</h3> */}
             <div className="likedPets">
                 <img src={dog.dogPhotoApi} className="smallLikeCard" />
                 <div>
