@@ -1,7 +1,7 @@
 import "./mylikes.css"
 
-const likeCard = (props) => {
-    console.log("in card")
+const MatchCard = (props) => {
+    console.log("in match card")
     console.log(props)
     const dog = props.dogdata
     return(
@@ -22,4 +22,4 @@ const likeCard = (props) => {
     )
 }
 
-export default likeCard
+export default MatchCard
