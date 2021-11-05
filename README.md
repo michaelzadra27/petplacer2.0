@@ -21,7 +21,7 @@ A tinder styled application that makes pet adoption an easy and fun experience! 
  ### Groups
  ![Preview](./client/public/images/CreateGroup.png)
 
-
+# Link to Deployed Application
 https://petplacer2.herokuapp.com/
 
 # Installation Instructions
