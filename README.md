@@ -7,8 +7,8 @@
 5. [Using the App](#UsingTheApp)
 
 
-# Name
- petplacer 2.0
+# Description
+A tinder styled application that makes pet adoption an easy and fun experience! While using real pets from the PETFINDER API, you can select which pet you might potentially want to adopt. You may also create or join groups in order discuss different type of pets.
 
  # Preview
 
@@ -21,8 +21,6 @@
  ### Groups
  ![Preview](./client/public/images/CreateGroup.png)
 
-# Description
-A tinder styled application that makes pet adoption an easy and fun experience! While using real pets from the PETFINDER API, you can select which pet you might potentially want to adopt. You may also create or join groups in order discuss different type of pets.
 
 https://petplacer2.herokuapp.com/
 
@@ -48,3 +46,6 @@ Password: ffffff
 From there, you will be redirected to the main page where you will be able to select the Breed, Sex, and Location of the pet you'd like to search for.
 
 You will then be able to click on either the "paw up" to add it to your matches or "paw down" to dismiss the pet.
+
+# Technologies
+ React, MERN Stack, GraphQL, HTML5, CSS3, NoSQL, JavaScript ES6+
